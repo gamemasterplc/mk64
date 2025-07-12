@@ -2,7 +2,7 @@
 #include <macros.h>
 #include <segments.h>
 
-#define MEMORY_POOL_SIZE 0xAB630
+#define MEMORY_POOL_SIZE 0x1AB630
 
 /**
  * Memory pool variable prevents code segments flowing into the memory pool

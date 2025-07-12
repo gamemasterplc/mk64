@@ -2864,10 +2864,10 @@ void course_update_clouds(s32 arg0) {
                 break;
         }
 
-        D_8018D208 = ((D_8018D200 / 2) * 0xB6) + 0x71C;
-        D_8018D210 = (-(D_8018D200 / 2) * 0xB6) - 0x71C;
+        D_8018D208 = ((D_8018D200 / 2) * ((SCREEN_WIDTH*182)/320)) + 0x71C;
+        D_8018D210 = (-(D_8018D200 / 2) * ((SCREEN_WIDTH*182)/320)) - 0x71C;
         D_8018D1E8 = 1.7578125 / D_8018D200;
-        D_8018D218 = 0xA0;
+        D_8018D218 = SCREEN_WIDTH/2;
 #if !ENABLE_CUSTOM_COURSE_ENGINE
         switch (gCurrentCourseId) {    /* switch 2 */
             case COURSE_MARIO_RACEWAY: /* switch 2 */

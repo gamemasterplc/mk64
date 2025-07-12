@@ -300,11 +300,11 @@ void func_802A4300(void) {
             gDPFillRectangle(gDisplayListHead++, ((SCREEN_WIDTH/2)-3), 0, ((SCREEN_WIDTH/2)-1), SCREEN_HEIGHT-1);
             break;
         case SCREEN_MODE_2P_SPLITSCREEN_HORIZONTAL:
-            gDPFillRectangle(gDisplayListHead++, 0, ((SCREEN_WIDTH/2)-1), SCREEN_WIDTH-1, ((SCREEN_WIDTH/2)+1));
+            gDPFillRectangle(gDisplayListHead++, 0, ((SCREEN_HEIGHT/2)-1), SCREEN_WIDTH-1, ((SCREEN_HEIGHT/2)+1));
             break;
         case SCREEN_MODE_3P_4P_SPLITSCREEN:
             gDPFillRectangle(gDisplayListHead++, ((SCREEN_WIDTH/2)-3), 0, ((SCREEN_WIDTH/2)-1), SCREEN_HEIGHT-1);
-            gDPFillRectangle(gDisplayListHead++, 0, ((SCREEN_WIDTH/2)-1), SCREEN_WIDTH-1, ((SCREEN_WIDTH/2)+1));
+            gDPFillRectangle(gDisplayListHead++, 0, ((SCREEN_HEIGHT/2)-1), SCREEN_WIDTH-1, ((SCREEN_HEIGHT/2)+1));
             break;
     }
     gDPPipeSync(gDisplayListHead++);
@@ -1460,7 +1460,7 @@ void func_802A7728(void) {
     if (gActiveScreenMode == SCREEN_MODE_3P_4P_SPLITSCREEN) {
         D_800DC5DC = 0;
     } else {
-        D_800DC5DC = 128;
+        D_800DC5DC = ((SCREEN_WIDTH/2)-32);
     }
     D_800DC5E0 = 0;
     temp_v0 = (s16) sRenderedFramebuffer - 1;
@@ -1491,7 +1491,7 @@ void func_802A7940(void) {
     if (gActiveScreenMode == SCREEN_MODE_3P_4P_SPLITSCREEN) {
         D_800DC5DC = 0;
     } else {
-        D_800DC5DC = 128;
+        D_800DC5DC = ((SCREEN_WIDTH/2)-32);
     }
     D_800DC5E0 = 0;
     temp_v0 = (s16) sRenderedFramebuffer - 1;

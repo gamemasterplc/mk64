@@ -1393,35 +1393,8 @@ f32 distance_if_visible(Vec3f cameraPos, Vec3f objectPos, u16 orientationY, f32 
         return -1.0f;
     }
 
-    angleObject = get_xz_angle_between_points(cameraPos, objectPos);
-    minusFovAngle = (orientationY - fovUnits);
-    plusFovAngle = (orientationY + fovUnits);
+    return distanceSquared;
 
-    if (preloadDistanceSquared == 0.0f) {
-        if (is_between_angle((orientationY + fovUnits), (orientationY - fovUnits), angleObject) == 1) {
-            return distanceSquared;
-        }
-        return -1.0f;
-    }
-
-    if (is_between_angle((u16) plusFovAngle, (u16) minusFovAngle, angleObject) == 1) {
-        return distanceSquared;
-    }
-
-    /* This is bugged. This gives asin((sin(theta)**2) instead of asin(sin(theta)) = theta.
-    Probably unnoticed because it only deals with objects not on screen*/
-    preloadAngle = asin1s(preloadDistanceSquared / distanceSquared);
-    adjustedAngle = angleObject + preloadAngle;
-
-    if (is_between_angle(plusFovAngle, minusFovAngle, adjustedAngle) == 1) {
-        return distanceSquared;
-    }
-
-    adjustedAngle = angleObject - preloadAngle;
-    if (is_between_angle(plusFovAngle, minusFovAngle, adjustedAngle) == 1) {
-        return distanceSquared;
-    }
-    return -1.0f;
 }
 
 // No idea if arg1 is actually a Mat4 or not, but since this function is unused

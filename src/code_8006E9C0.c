@@ -178,8 +178,8 @@ void track_minimap_settings(void) {
     if (gIsMirrorMode != 0) {
         xOrientation = -1.0f;
     }
-    gMiniMapFinishLineX[0] = 257;
-    gMiniMapFinishLineY[0] = 170;
+    gMiniMapFinishLineX[0] = SCREEN_WIDTH-63;
+    gMiniMapFinishLineY[0] = SCREEN_HEIGHT-70;
     D_8018D300 = 255;
     D_8018D308 = 255;
     D_8018D310 = 255;
@@ -194,20 +194,20 @@ void track_minimap_settings(void) {
             gMiniMapMarkerScale = 0.022f;
             gMiniMapX = 6;
             gMiniMapY = 28;
-            gMiniMapFinishLineX[0] = 260;
-            gMiniMapFinishLineY[0] = 170;
+            gMiniMapFinishLineX[0] = SCREEN_WIDTH-60;
+            gMiniMapFinishLineY[0] = SCREEN_HEIGHT-70;
             D_80165718 = 0;
             D_80165720 = 5;
             D_80165728 = -240;
             break;
         case COURSE_CHOCO_MOUNTAIN:
             gMiniMapMarkerScale = 0.022f;
-            gMiniMapFinishLineX[0] = 265;
+            gMiniMapFinishLineX[0] = SCREEN_WIDTH-55;
             gMiniMapX = 19;
             gMiniMapY = 37;
             break;
         case COURSE_BOWSER_CASTLE:
-            gMiniMapFinishLineX[0] = 265;
+            gMiniMapFinishLineX[0] = SCREEN_WIDTH-55;
             gMiniMapMarkerScale = 0.0174f;
             gMiniMapX = 12;
             gMiniMapY = 48;
@@ -226,7 +226,7 @@ void track_minimap_settings(void) {
             gMiniMapY = 38;
             break;
         case COURSE_FRAPPE_SNOWLAND:
-            gMiniMapFinishLineX[0] = 262;
+            gMiniMapFinishLineX[0] = SCREEN_WIDTH-58;
             gMiniMapMarkerScale = 0.016f;
             gMiniMapX = 36;
             gMiniMapY = 40;
@@ -237,13 +237,13 @@ void track_minimap_settings(void) {
         case COURSE_KOOPA_BEACH:
             D_8018D220 = (void*) dma_textures(gTextureExhaust3, 0x3C8U, 0x1000);
             gMiniMapMarkerScale = 0.014f;
-            gMiniMapFinishLineX[0] = 268;
+            gMiniMapFinishLineX[0] = SCREEN_WIDTH-52;
             gMiniMapX = 40;
             gMiniMapY = 21;
             break;
         case COURSE_ROYAL_RACEWAY:
             D_8018D220 = (void*) dma_textures(gTextureExhaust4, 0x3F8, 0x1000);
-            gMiniMapFinishLineX[0] = 262;
+            gMiniMapFinishLineX[0] = SCREEN_WIDTH-58;
             gMiniMapMarkerScale = 0.014f;
             gMiniMapX = 37;
             gMiniMapY = 50;
@@ -254,7 +254,7 @@ void track_minimap_settings(void) {
         case COURSE_LUIGI_RACEWAY:
             D_8018D220 = (void*) dma_textures(gTextureExhaust2, 0x4F4U, 0xC00);
             gMiniMapMarkerScale = 0.0155f;
-            gMiniMapFinishLineX[0] = 271;
+            gMiniMapFinishLineX[0] = SCREEN_WIDTH-49;
             gMiniMapX = 45;
             gMiniMapY = 60;
             D_80165718 = -140;
@@ -264,19 +264,19 @@ void track_minimap_settings(void) {
         case COURSE_MOO_MOO_FARM:
             D_8018D220 = (void*) dma_textures(gTextureExhaust0, 0x479, 0xC00);
             gMiniMapMarkerScale = 0.0155f;
-            gMiniMapFinishLineX[0] = 271;
+            gMiniMapFinishLineX[0] = SCREEN_WIDTH-49;
             gMiniMapX = 18;
             gMiniMapY = 36;
             break;
         case COURSE_TOADS_TURNPIKE:
             gMiniMapMarkerScale = 0.013f;
-            gMiniMapFinishLineX[0] = 252;
+            gMiniMapFinishLineX[0] = SCREEN_WIDTH-68;
             gMiniMapX = 57;
             gMiniMapY = 44;
             break;
         case COURSE_KALAMARI_DESERT:
-            gMiniMapFinishLineX[0] = 263;
-            gMiniMapFinishLineY[0] = 165;
+            gMiniMapFinishLineX[0] = SCREEN_WIDTH-57;
+            gMiniMapFinishLineY[0] = SCREEN_HEIGHT-75;
             D_8018D220 = (void*) dma_textures(gTextureExhaust5, 0x443, 0x1000);
             gMiniMapMarkerScale = 0.015f;
             gMiniMapX = 55;
@@ -285,7 +285,7 @@ void track_minimap_settings(void) {
         case COURSE_SHERBET_LAND:
             D_8018D220 = (void*) dma_textures(gTextureExhaust1, 0x485, 0xC00);
             gMiniMapMarkerScale = 0.015f;
-            gMiniMapFinishLineX[0] = 262;
+            gMiniMapFinishLineX[0] = SCREEN_WIDTH-58;
             gMiniMapX = 52;
             gMiniMapY = 33;
             D_8018D300 = 72;
@@ -294,8 +294,8 @@ void track_minimap_settings(void) {
             break;
         case COURSE_RAINBOW_ROAD:
             gMiniMapMarkerScale = 0.0103f;
-            gMiniMapFinishLineX[0] = 261;
-            gMiniMapFinishLineY[0] = 166;
+            gMiniMapFinishLineX[0] = SCREEN_WIDTH-59;
+            gMiniMapFinishLineY[0] = SCREEN_HEIGHT-74;
             gMiniMapX = 39;
             gMiniMapY = 55;
             break;
@@ -338,25 +338,25 @@ void track_minimap_settings(void) {
         gMiniMapX = D_8018D2B0 - gMiniMapX;
     }
     if (gPlayerCount == 4) {
-        gMiniMapFinishLineX[0] = 160;
-        gMiniMapFinishLineY[0] = 120;
+        gMiniMapFinishLineX[0] = SCREEN_WIDTH/2;
+        gMiniMapFinishLineY[0] = SCREEN_HEIGHT/2;
         return;
     }
     if (gPlayerCount == 3) {
-        gMiniMapFinishLineX[0] = 235;
-        gMiniMapFinishLineY[0] = 175;
+        gMiniMapFinishLineX[0] = ((SCREEN_WIDTH*3)/4)-5;
+        gMiniMapFinishLineY[0] = ((SCREEN_HEIGHT*3)/4)-5;
         return;
     }
     if (gPlayerCount == 2) {
         if (gCurrentCourseId != COURSE_TOADS_TURNPIKE) {
-            gMiniMapFinishLineX[1] = 265;
+            gMiniMapFinishLineX[1] = SCREEN_WIDTH-55;
             gMiniMapFinishLineX[0] = gMiniMapFinishLineX[1];
         } else {
-            gMiniMapFinishLineX[1] = 255;
+            gMiniMapFinishLineX[1] = SCREEN_WIDTH-65;
             gMiniMapFinishLineX[0] = gMiniMapFinishLineX[1];
         }
-        gMiniMapFinishLineY[0] = 65;
-        gMiniMapFinishLineY[1] = 180;
+        gMiniMapFinishLineY[0] = (SCREEN_HEIGHT/4)+5;
+        gMiniMapFinishLineY[1] = (SCREEN_HEIGHT*3)/4;
     }
 }
 
@@ -400,8 +400,8 @@ void func_8006F8CC(void) {
                 D_801657F0 = 1;
                 D_80165800[0] = D_80165800[1] = 0;
             }
-            gMiniMapFinishLineY[0] = 0x0041;
-            gMiniMapFinishLineY[1] = 0x00B4;
+            gMiniMapFinishLineY[0] = (SCREEN_HEIGHT/4)+5;
+            gMiniMapFinishLineY[1] = (SCREEN_HEIGHT*3)/4;
         }
         func_8006F824(0);
     } else {
@@ -999,25 +999,25 @@ void init_hud_one_player(void) {
     course_init_cloud();
     course_init_cloud();
     init_course_objects();
-    playerHUD[PLAYER_ONE].speedometerX = 0x0156;
-    playerHUD[PLAYER_ONE].speedometerY = 0x0106;
+    playerHUD[PLAYER_ONE].speedometerX = SCREEN_WIDTH+22;
+    playerHUD[PLAYER_ONE].speedometerY = SCREEN_HEIGHT+22;
     D_8018CFEC = playerHUD[PLAYER_ONE].speedometerX + 0x18;
     D_8018CFF4 = playerHUD[PLAYER_ONE].speedometerY + 6;
     D_8016579E = 0xDD00;
     playerHUD[PLAYER_ONE].rankX = 0x0034;
-    playerHUD[PLAYER_ONE].rankY = 0x00C8;
+    playerHUD[PLAYER_ONE].rankY = SCREEN_HEIGHT-40;
     playerHUD[PLAYER_ONE].slideRankX = 0;
     playerHUD[PLAYER_ONE].slideRankY = 0;
     playerHUD[PLAYER_ONE].stagingPosition = gGPCurrentRaceRankByPlayerId[0];
-    playerHUD[PLAYER_ONE].timerX = 0x012C;
-    playerHUD[PLAYER_ONE].lapCompletionTimeXs[0] = 0x012C;
-    playerHUD[PLAYER_ONE].lapCompletionTimeXs[1] = 0x012C;
+    playerHUD[PLAYER_ONE].timerX = SCREEN_WIDTH-20;
+    playerHUD[PLAYER_ONE].lapCompletionTimeXs[0] = SCREEN_WIDTH-20;
+    playerHUD[PLAYER_ONE].lapCompletionTimeXs[1] = SCREEN_WIDTH-20;
     playerHUD[PLAYER_ONE].timerY = 0x0011;
     playerHUD[PLAYER_ONE].lapX = -0x0028;
     playerHUD[PLAYER_ONE].lapAfterImage1X = -0x0028;
     playerHUD[PLAYER_ONE].lapAfterImage2X = -0x0028;
     playerHUD[PLAYER_ONE].lapY = 0x0019;
-    playerHUD[PLAYER_ONE].itemBoxX = 0x00A0;
+    playerHUD[PLAYER_ONE].itemBoxX = SCREEN_WIDTH/2;
     playerHUD[PLAYER_ONE].itemBoxY = -0x0020;
     playerHUD[PLAYER_ONE].slideItemBoxX = 0;
     playerHUD[PLAYER_ONE].slideItemBoxY = 0;

@@ -21,6 +21,7 @@
 #include "menu_items.h"
 #include "code_80057C60.h"
 #include "defines.h"
+#include "mk64.h"
 
 f32 D_802856B0 = 98.0f;
 f32 D_802856B4 = 12.0f;
@@ -1568,15 +1569,15 @@ void ceremony_transition_sliding_borders(void) {
     temp_f0 = D_802856B0 + gSizeSlidingBorders;
     // clang-format off
     // Note that this MUST be on one line. All hail significant whitespace in C!
-    do {if (temp_f0 > 240.0f) { temp_f0 = 239.0f; } } while (0);
+    do {if (temp_f0 > SCREEN_HEIGHT) { temp_f0 = SCREEN_HEIGHT-1; } } while (0);
     // clang-format on
 
     gDPPipeSync(gDisplayListHead++);
     gDPSetRenderMode(gDisplayListHead++, G_RM_OPA_SURF, G_RM_OPA_SURF2);
     gDPSetCycleType(gDisplayListHead++, G_CYC_FILL);
     gDPSetFillColor(gDisplayListHead++, (GPACK_RGBA5551(0, 0, 0, 1) << 16 | GPACK_RGBA5551(0, 0, 0, 1)));
-    gDPFillRectangle(gDisplayListHead++, 0, 0, 319, (s32) temp_f14);
-    gDPFillRectangle(gDisplayListHead++, 0, (s32) temp_f0, 319, 239);
+    gDPFillRectangle(gDisplayListHead++, 0, 0, SCREEN_WIDTH-1, (s32) temp_f14);
+    gDPFillRectangle(gDisplayListHead++, 0, (s32) temp_f0, SCREEN_WIDTH-1, SCREEN_HEIGHT-1);
     gDPSetCycleType(gDisplayListHead++, G_CYC_1CYCLE);
     adjust_f32_value_transition(&gSizeSlidingBorders, gOrderedSizeSlidingBorders, D_802856BC / D_802856B4);
 }

@@ -609,23 +609,23 @@ void guOrtho(Mtx*, f32, f32, f32, f32, f32, f32, f32); /* extern */
 extern s8 D_801658FE;
 
 void func_80041D34(void) {
-    guOrtho(&D_80183D60, 0.0f, 320.0f, 240.0f, 0.0f, -1.0f, 1.0f, 1.0f);
+    guOrtho(&D_80183D60, 0.0f, SCREEN_WIDTH, SCREEN_HEIGHT, 0.0f, -1.0f, 1.0f, 1.0f);
     switch (gActiveScreenMode) {
         case SCREEN_MODE_1P:
-            guOrtho(&gGfxPool->mtxOrtho, 0.0f, 320.0f, 240.0f, 0.0f, -1.0f, 1.0f, 1.0f);
+            guOrtho(&gGfxPool->mtxOrtho, 0.0f, SCREEN_WIDTH, SCREEN_HEIGHT, 0.0f, -1.0f, 1.0f, 1.0f);
             break;
         case SCREEN_MODE_2P_SPLITSCREEN_VERTICAL:
-            guOrtho(&gGfxPool->mtxOrtho, 0.0f, 160.0f, 120.0f, 0.0f, -1.0f, 1.0f, 1.0f);
+            guOrtho(&gGfxPool->mtxOrtho, 0.0f, SCREEN_WIDTH/2, SCREEN_HEIGHT/2, 0.0f, -1.0f, 1.0f, 1.0f);
             break;
         case SCREEN_MODE_2P_SPLITSCREEN_HORIZONTAL:
             if (D_801658FE == 0) {
-                guOrtho(&gGfxPool->mtxOrtho, 0.0f, 320.0f, 120.0f, 0.0f, -1.0f, 1.0f, 1.0f);
+                guOrtho(&gGfxPool->mtxOrtho, 0.0f, SCREEN_WIDTH, SCREEN_HEIGHT/2, 0.0f, -1.0f, 1.0f, 1.0f);
             } else {
-                guOrtho(&gGfxPool->mtxOrtho, 0.0f, 320.0f, 240.0f, 0.0f, -1.0f, 1.0f, 1.0f);
+                guOrtho(&gGfxPool->mtxOrtho, 0.0f, SCREEN_WIDTH, SCREEN_HEIGHT, 0.0f, -1.0f, 1.0f, 1.0f);
             }
             break;
         case SCREEN_MODE_3P_4P_SPLITSCREEN:
-            guOrtho(&gGfxPool->mtxOrtho, 0.0f, 320.0f, 240.0f, 0.0f, -1.0f, 1.0f, 1.0f);
+            guOrtho(&gGfxPool->mtxOrtho, 0.0f, SCREEN_WIDTH, SCREEN_HEIGHT, 0.0f, -1.0f, 1.0f, 1.0f);
             break;
     }
 }

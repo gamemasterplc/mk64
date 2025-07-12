@@ -885,8 +885,8 @@ void render_luigi_raceway(struct UnkStruct_800DC5EC* arg0) {
     // d_course_luigi_raceway_packed_dl_68
     gSPDisplayList(gDisplayListHead++, ((uintptr_t) 0x07000068));
 
-    D_800DC5DC = 88;
-    D_800DC5E0 = 72;
+    D_800DC5DC = ((SCREEN_WIDTH/2)-72);
+    D_800DC5E0 = ((SCREEN_HEIGHT/2)-48);
 
     // Render only the first player camera onto the television billboard. Screen agnostic screens of other players).
     if ((gActiveScreenMode == SCREEN_MODE_1P) && (sp22 >= 10) && (sp22 < 17)) {
@@ -1118,8 +1118,8 @@ void render_wario_stadium(struct UnkStruct_800DC5EC* arg0) {
     gSPDisplayList(gDisplayListHead++, ((uintptr_t) 0x07000A88));
     gSPSetGeometryMode(gDisplayListHead++, G_CULL_BACK);
 
-    D_800DC5DC = 88;
-    D_800DC5E0 = 72;
+    D_800DC5DC = ((SCREEN_WIDTH/2)-72);
+    D_800DC5E0 = ((SCREEN_HEIGHT/2)-48);
     if (gActiveScreenMode == SCREEN_MODE_1P) {
         prevFrame = (s16) sRenderedFramebuffer - 1;
         if (prevFrame < 0) {

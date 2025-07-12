@@ -1253,8 +1253,8 @@ void func_80091B78(void) {
         D_8018E838[i] = 0;
     }
 
-    D_800DC5EC->screenStartX = 160;
-    D_800DC5EC->screenStartY = 120;
+    D_800DC5EC->screenStartX = SCREEN_WIDTH/2;
+    D_800DC5EC->screenStartY = SCREEN_HEIGHT/2;
     D_800DC5EC->screenWidth = SCREEN_WIDTH;
     D_800DC5EC->screenHeight = SCREEN_HEIGHT;
     gFadeModeSelection = FADE_MODE_MAIN;
@@ -2121,7 +2121,7 @@ UNUSED void func_80093C90(void) {
 
 void func_80093C98(s32 arg0) {
     gSPViewport(gDisplayListHead++, VIRTUAL_TO_PHYSICAL(D_802B8880));
-    guOrtho(&gGfxPool->mtxEffect[gMatrixEffectCount], 0.0f, 319.0f, 239.0f, 0.0f, -100.0f, 100.0f, 1.0f);
+    guOrtho(&gGfxPool->mtxEffect[gMatrixEffectCount], 0.0f, SCREEN_WIDTH-1, SCREEN_HEIGHT-1, 0.0f, -100.0f, 100.0f, 1.0f);
     gSPMatrix(gDisplayListHead++, VIRTUAL_TO_PHYSICAL(&gGfxPool->mtxEffect[gMatrixEffectCount++]),
               G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_PROJECTION);
     gSPDisplayList(gDisplayListHead++, D_02007F18);
@@ -2168,11 +2168,11 @@ void func_80093E60(void) {
 
 void func_80093F10(void) {
     gSPViewport(gDisplayListHead++, VIRTUAL_TO_PHYSICAL(D_802B8880));
-    guOrtho(&gGfxPool->mtxEffect[gMatrixEffectCount], 0.0f, 319.0f, 239.0f, 0.0f, -100.0f, 100.0f, 1.0f);
+    guOrtho(&gGfxPool->mtxEffect[gMatrixEffectCount], 0.0f, SCREEN_WIDTH-1, SCREEN_HEIGHT-1, 0.0f, -100.0f, 100.0f, 1.0f);
     gSPMatrix(gDisplayListHead++, VIRTUAL_TO_PHYSICAL(&gGfxPool->mtxEffect[gMatrixEffectCount++]),
               G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_PROJECTION);
     gSPDisplayList(gDisplayListHead++, D_02007F18);
-    gDPSetScissor(gDisplayListHead++, G_SC_NON_INTERLACE, 0, 0, 320, 240);
+    gDPSetScissor(gDisplayListHead++, G_SC_NON_INTERLACE, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     func_80092290(4, D_8018E850, D_8018E858);
     func_80092290(5, (s32*) &D_8018E850[1], (s32*) &D_8018E858[1]);
     func_8009C918();
@@ -2189,7 +2189,7 @@ void func_80093F10(void) {
 void func_800940EC(s32 arg0) {
     gSPViewport(gDisplayListHead++, VIRTUAL_TO_PHYSICAL(D_802B8880));
     gDPSetScissor(gDisplayListHead++, G_SC_NON_INTERLACE, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-    guOrtho(&gGfxPool->mtxEffect[gMatrixEffectCount], 0.0f, 319.0f, 239.0f, 0.0f, -100.0f, 100.0f, 1.0f);
+    guOrtho(&gGfxPool->mtxEffect[gMatrixEffectCount], 0.0f, SCREEN_WIDTH-1, SCREEN_HEIGHT-1, 0.0f, -100.0f, 100.0f, 1.0f);
     gSPMatrix(gDisplayListHead++, VIRTUAL_TO_PHYSICAL(&gGfxPool->mtxEffect[gMatrixEffectCount++]),
               G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_PROJECTION);
     gSPDisplayList(gDisplayListHead++, D_02007F18);
@@ -2248,7 +2248,7 @@ void func_80094660(struct GfxPool* arg0, UNUSED s32 arg1) {
     u16 perspNorm;
     move_segment_table_to_dmem();
     gDPSetTexturePersp(gDisplayListHead++, G_TP_PERSP);
-    guPerspective(&arg0->mtxScreen, &perspNorm, 45.0f, 1.3333334f, 100.0f, 12800.0f, 1.0f);
+    guPerspective(&arg0->mtxScreen, &perspNorm, 45.0f, ((float)SCREEN_WIDTH/(float)SCREEN_HEIGHT), 100.0f, 12800.0f, 1.0f);
     gSPPerspNormalize(gDisplayListHead++, perspNorm);
     guLookAt(&arg0->mtxLookAt[0], 0.0f, 0.0f, (f32) gIntroModelZEye, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
     func_800942D0();
@@ -2260,7 +2260,7 @@ void func_80094660(struct GfxPool* arg0, UNUSED s32 arg1) {
 void render_checkered_flag(struct GfxPool* arg0, UNUSED s32 arg1) {
     u16 perspNorm;
     move_segment_table_to_dmem();
-    guPerspective(&arg0->mtxPersp[0], &perspNorm, 45.0f, 1.3333334f, 100.0f, 12800.0f, 1.0f);
+    guPerspective(&arg0->mtxPersp[0], &perspNorm, 45.0f, ((float)SCREEN_WIDTH/(float)SCREEN_HEIGHT), 100.0f, 12800.0f, 1.0f);
     gSPPerspNormalize(gDisplayListHead++, perspNorm);
     guLookAt(&arg0->mtxLookAt[1], 0.0f, 0.0f, (f32) gIntroModelZEye, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
     guRotate(&arg0->mtxObject[0], gIntroModelRotX, 1.0f, 0, 0);
@@ -3261,7 +3261,7 @@ Gfx* draw_box_fill(Gfx* displayListHead, s32 ulx, s32 uly, s32 lrx, s32 lry, s32
     if (lry < uly) {
         swap_values(&uly, &lry);
     }
-    if ((ulx >= 0x140) || (uly >= 0xF0)) {
+    if ((ulx >= SCREEN_WIDTH) || (uly >= SCREEN_HEIGHT)) {
         return displayListHead;
     }
     if (ulx < 0) {
@@ -3273,11 +3273,11 @@ Gfx* draw_box_fill(Gfx* displayListHead, s32 ulx, s32 uly, s32 lrx, s32 lry, s32
     if ((lrx < 0) || (lry < 0)) {
         return displayListHead;
     }
-    if (lrx >= 0x140) {
-        lrx = 0x13F;
+    if (lrx >= SCREEN_WIDTH) {
+        lrx = SCREEN_WIDTH-1;
     }
-    if (lry >= 0xF0) {
-        lry = 0xEF;
+    if (lry >= SCREEN_HEIGHT) {
+        lry = SCREEN_HEIGHT-1;
     }
     gSPDisplayList(displayListHead++, D_02008030);
     gDPSetFillColor(displayListHead++, (GPACK_RGBA5551(red, green, (u32) blue, alpha) << 0x10 |
@@ -3299,7 +3299,7 @@ Gfx* draw_box(Gfx* displayListHead, s32 ulx, s32 uly, s32 lrx, s32 lry, u32 red,
     if (lry < uly) {
         swap_values(&uly, &lry);
     }
-    if ((ulx >= 0x140) || (uly >= 0xF0)) {
+    if ((ulx >= SCREEN_WIDTH) || (uly >= SCREEN_HEIGHT)) {
         return displayListHead;
     }
     if (ulx < 0) {
@@ -3311,11 +3311,11 @@ Gfx* draw_box(Gfx* displayListHead, s32 ulx, s32 uly, s32 lrx, s32 lry, u32 red,
     if ((lrx < 0) || (lry < 0)) {
         return displayListHead;
     }
-    if (lrx >= 0x141) {
-        lrx = 0x140;
+    if (lrx >= SCREEN_WIDTH+1) {
+        lrx = SCREEN_WIDTH;
     }
-    if (lry >= 0xF1) {
-        lry = 0xF0;
+    if (lry >= SCREEN_HEIGHT+1) {
+        lry = SCREEN_HEIGHT;
     }
     gSPDisplayList(displayListHead++, D_02008008);
     gDPSetPrimColor(displayListHead++, 0, 0, red, green, blue, alpha);
@@ -4505,10 +4505,10 @@ void func_8009C918(void) {
         D_8018E810[someIndex].y = D_8015F480[someIndex].screenHeight;
     }
 
-    D_8018E7E8[4].x = 0x00A0;
-    D_8018E7E8[4].y = 0x0078;
-    D_8018E810[4].x = 0x0140;
-    D_8018E810[4].y = 0x00F0;
+    D_8018E7E8[4].x = SCREEN_WIDTH/2;
+    D_8018E7E8[4].y = SCREEN_HEIGHT/2;
+    D_8018E810[4].x = SCREEN_WIDTH;
+    D_8018E810[4].y = SCREEN_HEIGHT;
 }
 
 void func_8009CA2C(void) {
@@ -5432,7 +5432,7 @@ void add_menu_item(s32 type, s32 column, s32 row, s8 priority) {
             load_menu_img_comp_type(gMenuTexturesBackground[has_unlocked_extra_mode()], LOAD_MENU_IMG_TKMK00_ONCE);
             load_menu_img_comp_type(D_02004B74, LOAD_MENU_IMG_TKMK00_ONCE);
             convert_img_to_greyscale(0, 0x00000019);
-            adjust_img_colour(0, SCREEN_WIDTH * SCREEN_HEIGHT, D_800E74E8[type - MAIN_MENU_BACKGROUND].red,
+            adjust_img_colour(0, 320*240, D_800E74E8[type - MAIN_MENU_BACKGROUND].red,
                               D_800E74E8[type - MAIN_MENU_BACKGROUND].green,
                               D_800E74E8[type - MAIN_MENU_BACKGROUND].blue);
             break;
@@ -7751,7 +7751,7 @@ void func_800A54EC(void) {
     sp48 = find_menu_items(MENU_ITEM_PAUSE);
     if (why) {} // ?????
     gSPViewport(gDisplayListHead++, VIRTUAL_TO_PHYSICAL(D_802B8880));
-    guOrtho(&gGfxPool->mtxEffect[gMatrixEffectCount], 0.0f, 319.0f, 239.0f, 0.0f, -100.0f, 100.0f, 1.0f);
+    guOrtho(&gGfxPool->mtxEffect[gMatrixEffectCount], 0.0f, SCREEN_WIDTH-1, SCREEN_HEIGHT-1, 0.0f, -100.0f, 100.0f, 1.0f);
     gSPMatrix(gDisplayListHead++, VIRTUAL_TO_PHYSICAL(&gGfxPool->mtxEffect[gMatrixEffectCount++]),
               G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_PROJECTION);
     switch (why) { /* irregular */
@@ -10655,8 +10655,8 @@ void func_800AC458(MenuItem* arg0) {
                 arg0->column = 0;
                 arg0->state = 2;
                 arg0->param1 = 0;
-                D_800DC5EC->screenStartX = 0x00F0;
-                D_800DC5F0->screenStartX = 0x0050;
+                D_800DC5EC->screenStartX = SCREEN_HEIGHT;
+                D_800DC5F0->screenStartX = SCREEN_WIDTH/4;
             }
             break;
         case 2:
@@ -11065,8 +11065,8 @@ void func_800AD2E8(MenuItem* arg0) {
                 if ((arg0->state == 9) && (gPostTTReplayCannotSave == 1)) {
                     arg0->state--;
                 }
-                D_800DC5EC->screenStartX = 0x00F0;
-                D_800DC5F0->screenStartX = 0x0050;
+                D_800DC5EC->screenStartX = (SCREEN_WIDTH*3)/4;
+                D_800DC5F0->screenStartX = SCREEN_WIDTH/4;
             }
             break;
         case 5:  /* switch 3 */

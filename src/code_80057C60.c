@@ -1721,45 +1721,45 @@ void func_8005AB60(void) {
         case 0:
             break;
         case 1:
-            s16_step_towards(&playerHUD[PLAYER_ONE].speedometerX, 0x106, 0x10);
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].speedometerY, 0xB6, 0x10) != 0) {
+            s16_step_towards(&playerHUD[PLAYER_ONE].speedometerX, SCREEN_WIDTH-58, 0x10);
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].speedometerY, SCREEN_HEIGHT-58, 0x10) != 0) {
                 playerHUD[PLAYER_ONE].unk_78++;
                 playerHUD[PLAYER_ONE].unk_79 = 1;
             }
             break;
         case 2:
-            s16_step_towards(&playerHUD[PLAYER_ONE].speedometerX, 0x116, 4);
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].speedometerY, 0xC6, 4) != 0) {
+            s16_step_towards(&playerHUD[PLAYER_ONE].speedometerX, SCREEN_WIDTH-42, 4);
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].speedometerY, SCREEN_HEIGHT-42, 4) != 0) {
                 playerHUD[PLAYER_ONE].unk_78++;
             }
             break;
         case 3:
-            s16_step_towards(&playerHUD[PLAYER_ONE].speedometerX, 0x106, 4);
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].speedometerY, 0xB6, 4) != 0) {
+            s16_step_towards(&playerHUD[PLAYER_ONE].speedometerX, SCREEN_WIDTH-58, 4);
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].speedometerY, SCREEN_HEIGHT-58, 4) != 0) {
                 playerHUD[PLAYER_ONE].unk_78++;
             }
             break;
         case 4:
-            s16_step_towards(&playerHUD[PLAYER_ONE].speedometerX, 0x10E, 4);
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].speedometerY, 0xBE, 4) != 0) {
+            s16_step_towards(&playerHUD[PLAYER_ONE].speedometerX, SCREEN_WIDTH-50, 4);
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].speedometerY, SCREEN_HEIGHT-50, 4) != 0) {
                 playerHUD[PLAYER_ONE].unk_78++;
             }
             break;
         case 5:
-            s16_step_towards(&playerHUD[PLAYER_ONE].speedometerX, 0x106, 4);
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].speedometerY, 0xB6, 4) != 0) {
+            s16_step_towards(&playerHUD[PLAYER_ONE].speedometerX, SCREEN_WIDTH-58, 4);
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].speedometerY, SCREEN_HEIGHT-58, 4) != 0) {
                 playerHUD[PLAYER_ONE].unk_78++;
             }
             break;
         case 6:
-            s16_step_towards(&playerHUD[PLAYER_ONE].speedometerX, 0x10A, 2);
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].speedometerY, 0xBA, 2) != 0) {
+            s16_step_towards(&playerHUD[PLAYER_ONE].speedometerX, SCREEN_WIDTH-54, 2);
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].speedometerY, SCREEN_HEIGHT-54, 2) != 0) {
                 playerHUD[PLAYER_ONE].unk_78++;
             }
             break;
         case 7:
-            s16_step_towards(&playerHUD[PLAYER_ONE].speedometerX, 0x106, 2);
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].speedometerY, 0xB6, 2) != 0) {
+            s16_step_towards(&playerHUD[PLAYER_ONE].speedometerX, SCREEN_WIDTH-58, 2);
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].speedometerY, SCREEN_HEIGHT-58, 2) != 0) {
                 playerHUD[PLAYER_ONE].unk_78++;
             }
             break;
@@ -1822,37 +1822,37 @@ void func_8005AB60(void) {
         case 0:
             break;
         case 1:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].timerX, 0xE4, 0x10) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].timerX, SCREEN_WIDTH-92, 0x10) != 0) {
                 playerHUD[PLAYER_ONE].unk_7A++;
             }
             break;
         case 2:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].timerX, 0xF4, 4) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].timerX, SCREEN_WIDTH-76, 4) != 0) {
                 playerHUD[PLAYER_ONE].unk_7A++;
             }
             break;
         case 3:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].timerX, 0xE4, 4) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].timerX, SCREEN_WIDTH-92, 4) != 0) {
                 playerHUD[PLAYER_ONE].unk_7A++;
             }
             break;
         case 4:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].timerX, 0xEC, 4) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].timerX, SCREEN_WIDTH-84, 4) != 0) {
                 playerHUD[PLAYER_ONE].unk_7A++;
             }
             break;
         case 5:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].timerX, 0xE4, 4) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].timerX, SCREEN_WIDTH-92, 4) != 0) {
                 playerHUD[PLAYER_ONE].unk_7A++;
             }
             break;
         case 6:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].timerX, 0xE8, 2) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].timerX, SCREEN_WIDTH-88, 2) != 0) {
                 playerHUD[PLAYER_ONE].unk_7A++;
             }
             break;
         case 7:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].timerX, 0xE4, 2) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].timerX, SCREEN_WIDTH-92, 2) != 0) {
                 playerHUD[PLAYER_ONE].unk_7A++;
             }
             break;
@@ -1908,37 +1908,37 @@ void func_8005AB60(void) {
         case 0:
             break;
         case 1:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap1CompletionTimeX, 0xE4, 0x10) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap1CompletionTimeX, SCREEN_WIDTH-92, 0x10) != 0) {
                 playerHUD[PLAYER_ONE].unk_7B++;
             }
             break;
         case 2:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap1CompletionTimeX, 0xF4, 4) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap1CompletionTimeX, SCREEN_WIDTH-80, 4) != 0) {
                 playerHUD[PLAYER_ONE].unk_7B++;
             }
             break;
         case 3:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap1CompletionTimeX, 0xE4, 4) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap1CompletionTimeX, SCREEN_WIDTH-92, 4) != 0) {
                 playerHUD[PLAYER_ONE].unk_7B++;
             }
             break;
         case 4:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap1CompletionTimeX, 0xEC, 4) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap1CompletionTimeX, SCREEN_WIDTH-84, 4) != 0) {
                 playerHUD[PLAYER_ONE].unk_7B++;
             }
             break;
         case 5:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap1CompletionTimeX, 0xE4, 4) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap1CompletionTimeX, SCREEN_WIDTH-92, 4) != 0) {
                 playerHUD[PLAYER_ONE].unk_7B++;
             }
             break;
         case 6:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap1CompletionTimeX, 0xE8, 2) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap1CompletionTimeX, SCREEN_WIDTH-88, 2) != 0) {
                 playerHUD[PLAYER_ONE].unk_7B++;
             }
             break;
         case 7:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap1CompletionTimeX, 0xE4, 2) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap1CompletionTimeX, SCREEN_WIDTH-92, 2) != 0) {
                 playerHUD[PLAYER_ONE].unk_7B++;
             }
             break;
@@ -1992,37 +1992,37 @@ void func_8005AB60(void) {
         case 0:
             break;
         case 1:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, 0xE4, 0x10) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-76, 0x10) != 0) {
                 playerHUD[PLAYER_ONE].unk_7C++;
             }
             break;
         case 2:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, 0xF4, 4) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-60, 4) != 0) {
                 playerHUD[PLAYER_ONE].unk_7C++;
             }
             break;
         case 3:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, 0xE4, 4) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-76, 4) != 0) {
                 playerHUD[PLAYER_ONE].unk_7C++;
             }
             break;
         case 4:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, 0xEC, 4) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-68, 4) != 0) {
                 playerHUD[PLAYER_ONE].unk_7C++;
             }
             break;
         case 5:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, 0xE4, 4) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-76, 4) != 0) {
                 playerHUD[PLAYER_ONE].unk_7C++;
             }
             break;
         case 6:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, 0xE8, 2) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-72, 2) != 0) {
                 playerHUD[PLAYER_ONE].unk_7C++;
             }
             break;
         case 7:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, 0xE4, 2) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-76, 2) != 0) {
                 playerHUD[PLAYER_ONE].unk_7C++;
             }
             break;
@@ -2082,10 +2082,10 @@ void func_8005B7A0(void) {
     UNUSED f32* var_s1;
     s32 var_s0;
 
-    s16_step_towards(&playerHUD[PLAYER_ONE].lap1CompletionTimeX, 0xE4, 0x10);
-    s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, 0xE4, 0x10);
-    s16_step_towards(&playerHUD[PLAYER_ONE].lap3CompletionTimeX, 0xE4, 0x10);
-    s16_step_towards(&playerHUD[PLAYER_ONE].totalTimeX, 0xE4, 0x10);
+    s16_step_towards(&playerHUD[PLAYER_ONE].lap1CompletionTimeX, SCREEN_WIDTH-92, 0x10);
+    s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-92, 0x10);
+    s16_step_towards(&playerHUD[PLAYER_ONE].lap3CompletionTimeX, SCREEN_WIDTH-92, 0x10);
+    s16_step_towards(&playerHUD[PLAYER_ONE].totalTimeX, SCREEN_WIDTH-92, 0x10);
     for (var_s0 = 0; var_s0 < NUM_PLAYERS; var_s0++) {
         temp_s2 = &D_8018D028[var_s0];
         temp_s3 = &D_8018D0C8[var_s0];
@@ -2622,10 +2622,10 @@ void func_8005CB60(s32 playerId, s32 lapCount) {
                     if (gCurrentCourseId == COURSE_YOSHI_VALLEY) {
                         playerHUD[playerId].unk_81 = 1;
                     }
-                    playerHUD[playerId].lap1CompletionTimeX = 0x0140;
-                    playerHUD[playerId].lap2CompletionTimeX = 0x01E0;
-                    playerHUD[playerId].lap3CompletionTimeX = 0x0280;
-                    playerHUD[playerId].totalTimeX = 0x0320;
+                    playerHUD[playerId].lap1CompletionTimeX = SCREEN_WIDTH;
+                    playerHUD[playerId].lap2CompletionTimeX = (SCREEN_WIDTH*3)/2;
+                    playerHUD[playerId].lap3CompletionTimeX = SCREEN_WIDTH*2;
+                    playerHUD[playerId].totalTimeX = (SCREEN_WIDTH*5)/2;
                     D_8016587C = (s32) 1;
                     if (D_8018D20C == 0) {
                         func_80079054(playerId);
@@ -2655,10 +2655,10 @@ void func_8005CB60(s32 playerId, s32 lapCount) {
             case 1:
                 s16_step_towards(&playerHUD[playerId].slideRankX, 0x001C, 7);
                 s16_step_towards(&playerHUD[playerId].slideRankY, -0x0010, 4);
-                s16_step_towards(&playerHUD[playerId].lap1CompletionTimeX, 0x00E4, 0x0010);
-                s16_step_towards(&playerHUD[playerId].lap2CompletionTimeX, 0x00E4, 0x0010);
-                s16_step_towards(&playerHUD[playerId].lap3CompletionTimeX, 0x00E4, 0x0010);
-                s16_step_towards(&playerHUD[playerId].totalTimeX, 0x00E4, 0x0010);
+                s16_step_towards(&playerHUD[playerId].lap1CompletionTimeX, SCREEN_WIDTH-92, 0x0010);
+                s16_step_towards(&playerHUD[playerId].lap2CompletionTimeX, SCREEN_WIDTH-92, 0x0010);
+                s16_step_towards(&playerHUD[playerId].lap3CompletionTimeX, SCREEN_WIDTH-92, 0x0010);
+                s16_step_towards(&playerHUD[playerId].totalTimeX, SCREEN_WIDTH-92, 0x0010);
                 break;
             case 3:
                 if ((playerId & 1) == 1) {
