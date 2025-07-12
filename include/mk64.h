@@ -17,7 +17,7 @@
 
 #define DOUBLE_SIZE_ON_64_BIT(size) ((size) * (sizeof(void*) / 4))
 
-#define SCREEN_WIDTH 320
+#define SCREEN_WIDTH 424
 #define SCREEN_HEIGHT 240
 
 #define STACKSIZE 0x2000

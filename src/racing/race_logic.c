@@ -181,15 +181,15 @@ void func_8028E438(void) {
             if (temp_v0->screenHeight < SCREEN_HEIGHT) {
                 temp_v0->screenHeight += 2;
             }
-            if (temp_v0->screenStartX < 160) {
+            if (temp_v0->screenStartX < (SCREEN_WIDTH/2)) {
                 temp_v0->screenStartX += 1;
 
-            } else if (temp_v0->screenStartX > 160) {
+            } else if (temp_v0->screenStartX > (SCREEN_WIDTH/2)) {
                 temp_v0->screenStartX -= 1;
             }
-            if (temp_v0->screenStartY < 120) {
+            if (temp_v0->screenStartY < (SCREEN_HEIGHT/2)) {
                 temp_v0->screenStartY += 1;
-            } else if (temp_v0->screenStartY > 120) {
+            } else if (temp_v0->screenStartY > (SCREEN_HEIGHT/2)) {
                 temp_v0->screenStartY -= 1;
             }
             phi_v1_4 = 0;
@@ -203,10 +203,10 @@ void func_8028E438(void) {
                 phi_v1_4++;
             }
 
-            if (temp_v0->screenStartY == 120) {
+            if (temp_v0->screenStartY == (SCREEN_HEIGHT/2)) {
                 phi_v1_4++;
             }
-            if (temp_v0->screenStartX == 160) {
+            if (temp_v0->screenStartX == (SCREEN_WIDTH/2)) {
                 phi_v1_4++;
             }
             gScreenAspect = (f32) ((f32) temp_v0->screenWidth / (f32) temp_v0->screenHeight);
@@ -270,18 +270,18 @@ void func_8028E678(void) {
 
             D_800DC5F0->screenStartX += 2;
 
-            if (D_800DC5EC->screenWidth < 160) {
-                D_800DC5EC->screenWidth = 160;
+            if (D_800DC5EC->screenWidth < (SCREEN_WIDTH/2)) {
+                D_800DC5EC->screenWidth = (SCREEN_WIDTH/2);
                 phi_a0_10++;
             }
 
-            if (D_800DC5F0->screenWidth < 160) {
-                D_800DC5F0->screenWidth = 160;
+            if (D_800DC5F0->screenWidth < (SCREEN_WIDTH/2)) {
+                D_800DC5F0->screenWidth = (SCREEN_WIDTH/2);
                 phi_a0_10++;
             }
 
-            if (D_800DC5EC->screenStartX < 80) {
-                D_800DC5EC->screenStartX = 80;
+            if (D_800DC5EC->screenStartX < (SCREEN_WIDTH/4)) {
+                D_800DC5EC->screenStartX = (SCREEN_WIDTH/4);
                 phi_a0_10++;
             }
 
@@ -304,23 +304,23 @@ void func_8028E678(void) {
             D_800DC5EC->screenStartY -= 2;
             D_800DC5F0->screenStartY += 2;
 
-            if (D_800DC5EC->screenHeight < 120) {
-                D_800DC5EC->screenHeight = 120;
+            if (D_800DC5EC->screenHeight < (SCREEN_WIDTH/2)) {
+                D_800DC5EC->screenHeight = (SCREEN_WIDTH/2);
                 phi_a0_10++;
             }
 
-            if (D_800DC5F0->screenHeight < 120) {
-                D_800DC5F0->screenHeight = 120;
+            if (D_800DC5F0->screenHeight < (SCREEN_WIDTH/2)) {
+                D_800DC5F0->screenHeight = (SCREEN_WIDTH/2);
                 phi_a0_10++;
             }
 
-            if (D_800DC5EC->screenStartY < 60) {
-                D_800DC5EC->screenStartY = 60;
+            if (D_800DC5EC->screenStartY < (SCREEN_HEIGHT/4)) {
+                D_800DC5EC->screenStartY = (SCREEN_HEIGHT/4);
                 phi_a0_10++;
             }
 
-            if (D_800DC5F0->screenStartY > 180) {
-                D_800DC5F0->screenStartY = 180;
+            if (D_800DC5F0->screenStartY > ((SCREEN_HEIGHT*3)/4)) {
+                D_800DC5F0->screenStartY = ((SCREEN_HEIGHT*3)/4);
                 phi_a0_10++;
             }
 
@@ -335,9 +335,9 @@ void func_8028E678(void) {
             D_800DC5EC->screenHeight -= 2;
             D_800DC5EC->screenWidth = (D_800DC5EC->screenHeight * SCREEN_WIDTH) / SCREEN_HEIGHT;
 
-            if (D_800DC5EC->screenHeight < 120) {
+            if (D_800DC5EC->screenHeight < (SCREEN_HEIGHT/2)) {
 
-                D_800DC5EC->screenHeight = 120;
+                D_800DC5EC->screenHeight = (SCREEN_HEIGHT/2);
                 D_800DC5EC->screenWidth = (D_800DC5EC->screenHeight * SCREEN_WIDTH) / SCREEN_HEIGHT;
                 D_8015F894 = 2;
 
@@ -347,7 +347,7 @@ void func_8028E678(void) {
                 D_800DC5F0->screenStartY = D_800DC5EC->screenStartY;
 
                 gActiveScreenMode = SCREEN_MODE_2P_SPLITSCREEN_VERTICAL;
-                gScreenAspect = 1.33333337;
+                gScreenAspect = ((f32)SCREEN_WIDTH)/SCREEN_HEIGHT;
                 gPlayerCountSelection1 = 2;
                 func_8003DB5C();
                 func_8005994C();
@@ -358,13 +358,13 @@ void func_8028E678(void) {
 
             D_800DC5EC->screenStartY -= 2;
 
-            if (D_800DC5EC->screenStartX < 80) {
-                D_800DC5EC->screenStartX = 80;
+            if (D_800DC5EC->screenStartX < (SCREEN_WIDTH/4)) {
+                D_800DC5EC->screenStartX = (SCREEN_WIDTH/4);
                 phi_a0_10++;
             }
 
-            if (D_800DC5EC->screenStartY < 60) {
-                D_800DC5EC->screenStartY = 60;
+            if (D_800DC5EC->screenStartY < (SCREEN_HEIGHT/4)) {
+                D_800DC5EC->screenStartY = (SCREEN_HEIGHT/4);
                 phi_a0_10++;
             }
             D_800DC5F0->screenStartX += 4;
@@ -374,8 +374,8 @@ void func_8028E678(void) {
                 D_800DC5F0->screenStartX = SCREEN_HEIGHT;
                 phi_a0_10++;
             }
-            if (D_800DC5F0->screenStartY > 180) {
-                D_800DC5F0->screenStartY = 180;
+            if (D_800DC5F0->screenStartY > ((SCREEN_HEIGHT*3)/4)) {
+                D_800DC5F0->screenStartY = ((SCREEN_HEIGHT*3)/4);
                 phi_a0_10++;
             }
             if (phi_a0_10 == 4) {
@@ -687,69 +687,69 @@ void func_8028F588(void) {
 
     switch (gActiveScreenMode) { /* irregular */
         case SCREEN_MODE_1P:
-            screenWidth = (s16) (s32) (320.0f * D_802BA034);
+            screenWidth = (s16) (s32) ((float)SCREEN_WIDTH * D_802BA034);
             if (screenWidth < 0) {
                 screenWidth = 1;
             }
             D_800DC5EC->screenWidth = screenWidth;
-            screenWidth = (s16) (s32) (240.0f * D_802BA034);
+            screenWidth = (s16) (s32) ((float)SCREEN_HEIGHT * D_802BA034);
             if (screenWidth < 0) {
                 screenWidth = 1;
             }
             D_800DC5EC->screenHeight = screenWidth;
             break;
         case SCREEN_MODE_2P_SPLITSCREEN_VERTICAL:
-            screenWidth = (s16) (s32) (160.0f * D_802BA034);
+            screenWidth = (s16) (s32) ((float)(SCREEN_WIDTH/2) * D_802BA034);
             if (screenWidth <= 0) {
                 screenWidth = 1;
-            } else if (screenWidth >= 0x140) {
-                screenWidth = 0x013C;
+            } else if (screenWidth >= SCREEN_WIDTH) {
+                screenWidth = SCREEN_WIDTH-4;
             }
             D_800DC5EC->screenWidth = screenWidth;
             D_800DC5F0->screenWidth = screenWidth;
-            screenWidth = (s16) (s32) (240.0f * D_802BA034);
+            screenWidth = (s16) (s32) ((float)(SCREEN_HEIGHT) * D_802BA034);
             if (screenWidth <= 0) {
                 screenWidth = 1;
-            } else if (screenWidth >= 0x1E0) {
-                screenWidth = 0x01DC;
+            } else if (screenWidth >= SCREEN_HEIGHT*2) {
+                screenWidth = (SCREEN_HEIGHT*2)-4;
             }
             D_800DC5EC->screenHeight = screenWidth;
             D_800DC5F0->screenHeight = screenWidth;
             break;
         case SCREEN_MODE_2P_SPLITSCREEN_HORIZONTAL:
-            screenWidth = (s16) (s32) (320.0f * D_802BA034);
+            screenWidth = (s16) (s32) ((float)(SCREEN_WIDTH) * D_802BA034);
             if (screenWidth <= 0) {
                 screenWidth = 1;
-            } else if (screenWidth >= 0x280) {
-                screenWidth = 0x027C;
+            } else if (screenWidth >= (SCREEN_WIDTH*2)) {
+                screenWidth = (SCREEN_WIDTH*2)-4;
             }
             D_800DC5EC->screenWidth = screenWidth;
             D_800DC5F0->screenWidth = screenWidth;
-            screenWidth = (s16) (s32) (120.0f * D_802BA034);
+            screenWidth = (s16) (s32) ((float)(SCREEN_HEIGHT/2) * D_802BA034);
             if (screenWidth <= 0) {
                 screenWidth = 1;
-            } else if (screenWidth >= 0xF0) {
-                screenWidth = 0x00EC;
+            } else if (screenWidth >= SCREEN_HEIGHT) {
+                screenWidth = SCREEN_HEIGHT-4;
             }
             D_800DC5EC->screenHeight = screenWidth;
             D_800DC5F0->screenHeight = screenWidth;
             break;
         case SCREEN_MODE_3P_4P_SPLITSCREEN:
-            screenWidth = (s16) (s32) (160.0f * D_802BA034);
+            screenWidth = (s16) (s32) ((float)(SCREEN_WIDTH/2)  * D_802BA034);
             if (screenWidth <= 0) {
                 screenWidth = 1;
-            } else if (screenWidth >= 0x140) {
-                screenWidth = 0x013C;
+            } else if (screenWidth >= SCREEN_WIDTH) {
+                screenWidth = (SCREEN_WIDTH-4);
             }
             D_800DC5EC->screenWidth = screenWidth;
             D_800DC5F0->screenWidth = screenWidth;
             D_800DC5F4->screenWidth = screenWidth;
             D_800DC5F8->screenWidth = screenWidth;
-            screenWidth = (s16) (s32) (120.0f * D_802BA034);
+            screenWidth = (s16) (s32) ((float)(SCREEN_HEIGHT/2) * D_802BA034);
             if (screenWidth <= 0) {
                 screenWidth = 1;
-            } else if (screenWidth >= 0xF0) {
-                screenWidth = 0x00EC;
+            } else if (screenWidth >= SCREEN_HEIGHT) {
+                screenWidth = SCREEN_HEIGHT-4;
             }
             D_800DC5EC->screenHeight = screenWidth;
             D_800DC5F0->screenHeight = screenWidth;

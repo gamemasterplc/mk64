@@ -20,51 +20,51 @@
 #include "menus.h"
 
 Vp D_802B8880[] = {
-    { { { 640, 480, 511, 0 }, { 640, 480, 511, 0 } } },
+    { { { SCREEN_WIDTH*2, SCREEN_HEIGHT*2, 511, 0 }, { SCREEN_WIDTH*2, SCREEN_HEIGHT*2, 511, 0 } } },
 };
 
 static Vtx sSkyboxP1[] = {
     { { { SCREEN_WIDTH, SCREEN_HEIGHT, -1 }, 0, { 0, 0 }, { 0xC8, 0xC8, 0xFF, 0xFF } } },
-    { { { SCREEN_WIDTH, 120, -1 }, 0, { 0, 0 }, { 0x1E, 0x1E, 0xFF, 0xFF } } },
-    { { { 0, 120, -1 }, 0, { 0, 0 }, { 0x1E, 0x1E, 0xFF, 0xFF } } },
+    { { { SCREEN_WIDTH, SCREEN_HEIGHT/2, -1 }, 0, { 0, 0 }, { 0x1E, 0x1E, 0xFF, 0xFF } } },
+    { { { 0, SCREEN_HEIGHT/2, -1 }, 0, { 0, 0 }, { 0x1E, 0x1E, 0xFF, 0xFF } } },
     { { { 0, SCREEN_HEIGHT, -1 }, 0, { 0, 0 }, { 0xC8, 0xC8, 0xFF, 0xFF } } },
-    { { { SCREEN_WIDTH, 120, -1 }, 0, { 0, 0 }, { 0x00, 0xDC, 0x00, 0xFF } } },
+    { { { SCREEN_WIDTH, SCREEN_HEIGHT/2, -1 }, 0, { 0, 0 }, { 0x00, 0xDC, 0x00, 0xFF } } },
     { { { SCREEN_WIDTH, 0, -1 }, 0, { 0, 0 }, { 0x78, 0xFF, 0x78, 0xFF } } },
     { { { 0, 0, -1 }, 0, { 0, 0 }, { 0x78, 0xFF, 0x78, 0xFF } } },
-    { { { 0, 120, -1 }, 0, { 0, 0 }, { 0x00, 0xDC, 0x00, 0xFF } } },
+    { { { 0, SCREEN_HEIGHT/2, -1 }, 0, { 0, 0 }, { 0x00, 0xDC, 0x00, 0xFF } } },
 };
 
 static Vtx sSkyboxP2[] = {
     { { { SCREEN_WIDTH, SCREEN_HEIGHT, -1 }, 0, { 0, 0 }, { 0xC8, 0xC8, 0xFF, 0xFF } } },
-    { { { SCREEN_WIDTH, 120, -1 }, 0, { 0, 0 }, { 0x1E, 0x1E, 0xFF, 0xFF } } },
-    { { { 0, 120, -1 }, 0, { 0, 0 }, { 0x1E, 0x1E, 0xFF, 0xFF } } },
+    { { { SCREEN_WIDTH, SCREEN_HEIGHT/2, -1 }, 0, { 0, 0 }, { 0x1E, 0x1E, 0xFF, 0xFF } } },
+    { { { 0, SCREEN_HEIGHT/2, -1 }, 0, { 0, 0 }, { 0x1E, 0x1E, 0xFF, 0xFF } } },
     { { { 0, SCREEN_HEIGHT, -1 }, 0, { 0, 0 }, { 0xC8, 0xC8, 0xFF, 0xFF } } },
-    { { { SCREEN_WIDTH, 120, -1 }, 0, { 0, 0 }, { 0x00, 0xDC, 0x00, 0xFF } } },
+    { { { SCREEN_WIDTH, SCREEN_HEIGHT/2, -1 }, 0, { 0, 0 }, { 0x00, 0xDC, 0x00, 0xFF } } },
     { { { SCREEN_WIDTH, 0, -1 }, 0, { 0, 0 }, { 0x78, 0xFF, 0x78, 0xFF } } },
     { { { 0, 0, -1 }, 0, { 0, 0 }, { 0x78, 0xFF, 0x78, 0xFF } } },
-    { { { 0, 120, -1 }, 0, { 0, 0 }, { 0x00, 0xDC, 0x00, 0xFF } } },
+    { { { 0, SCREEN_HEIGHT/2, -1 }, 0, { 0, 0 }, { 0x00, 0xDC, 0x00, 0xFF } } },
 };
 
 static Vtx sSkyboxP3[] = {
     { { { SCREEN_WIDTH, SCREEN_HEIGHT, -1 }, 0, { 0, 0 }, { 0xC8, 0xC8, 0xFF, 0xFF } } },
-    { { { SCREEN_WIDTH, 120, -1 }, 0, { 0, 0 }, { 0x1E, 0x1E, 0xFF, 0xFF } } },
-    { { { 0, 120, -1 }, 0, { 0, 0 }, { 0x1E, 0x1E, 0xFF, 0xFF } } },
+    { { { SCREEN_WIDTH, SCREEN_HEIGHT/2, -1 }, 0, { 0, 0 }, { 0x1E, 0x1E, 0xFF, 0xFF } } },
+    { { { 0, SCREEN_HEIGHT/2, -1 }, 0, { 0, 0 }, { 0x1E, 0x1E, 0xFF, 0xFF } } },
     { { { 0, SCREEN_HEIGHT, -1 }, 0, { 0, 0 }, { 0xC8, 0xC8, 0xFF, 0xFF } } },
-    { { { SCREEN_WIDTH, 120, -1 }, 0, { 0, 0 }, { 0x00, 0xDC, 0x00, 0xFF } } },
+    { { { SCREEN_WIDTH, SCREEN_HEIGHT/2, -1 }, 0, { 0, 0 }, { 0x00, 0xDC, 0x00, 0xFF } } },
     { { { SCREEN_WIDTH, 0, -1 }, 0, { 0, 0 }, { 0x78, 0xFF, 0x78, 0xFF } } },
     { { { 0, 0, -1 }, 0, { 0, 0 }, { 0x78, 0xFF, 0x78, 0xFF } } },
-    { { { 0, 120, -1 }, 0, { 0, 0 }, { 0x00, 0xDC, 0x00, 0xFF } } },
+    { { { 0, SCREEN_HEIGHT/2, -1 }, 0, { 0, 0 }, { 0x00, 0xDC, 0x00, 0xFF } } },
 };
 
 static Vtx sSkyboxP4[] = {
     { { { SCREEN_WIDTH, SCREEN_HEIGHT, -1 }, 0, { 0, 0 }, { 0xC8, 0xC8, 0xFF, 0xFF } } },
-    { { { SCREEN_WIDTH, 120, -1 }, 0, { 0, 0 }, { 0x1E, 0x1E, 0xFF, 0xFF } } },
-    { { { 0, 120, -1 }, 0, { 0, 0 }, { 0x1E, 0x1E, 0xFF, 0xFF } } },
+    { { { SCREEN_WIDTH, SCREEN_HEIGHT/2, -1 }, 0, { 0, 0 }, { 0x1E, 0x1E, 0xFF, 0xFF } } },
+    { { { 0, SCREEN_HEIGHT/2, -1 }, 0, { 0, 0 }, { 0x1E, 0x1E, 0xFF, 0xFF } } },
     { { { 0, SCREEN_HEIGHT, -1 }, 0, { 0, 0 }, { 0xC8, 0xC8, 0xFF, 0xFF } } },
-    { { { SCREEN_WIDTH, 120, -1 }, 0, { 0, 0 }, { 0x00, 0xDC, 0x00, 0xFF } } },
+    { { { SCREEN_WIDTH, SCREEN_HEIGHT/2, -1 }, 0, { 0, 0 }, { 0x00, 0xDC, 0x00, 0xFF } } },
     { { { SCREEN_WIDTH, 0, -1 }, 0, { 0, 0 }, { 0x78, 0xFF, 0x78, 0xFF } } },
     { { { 0, 0, -1 }, 0, { 0, 0 }, { 0x78, 0xFF, 0x78, 0xFF } } },
-    { { { 0, 120, -1 }, 0, { 0, 0 }, { 0x00, 0xDC, 0x00, 0xFF } } },
+    { { { 0, SCREEN_HEIGHT/2, -1 }, 0, { 0, 0 }, { 0x00, 0xDC, 0x00, 0xFF } } },
 };
 
 void func_802A3730(struct UnkStruct_800DC5EC* arg0) {
@@ -201,7 +201,7 @@ void init_z_buffer(void) {
     gDPSetFillColor(gDisplayListHead++, 0xFFFCFFFC);
     gDPPipeSync(gDisplayListHead++);
     gDPSetScissor(gDisplayListHead++, G_SC_NON_INTERLACE, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-    gDPFillRectangle(gDisplayListHead++, 0, 0, 319, 239);
+    gDPFillRectangle(gDisplayListHead++, 0, 0, SCREEN_WIDTH-1, SCREEN_HEIGHT-1);
     gDPPipeSync(gDisplayListHead++);
     gDPSetColorImage(gDisplayListHead++, G_IM_FMT_RGBA, G_IM_SIZ_16b, SCREEN_WIDTH,
                      VIRTUAL_TO_PHYSICAL(gPhysicalFramebuffers[sRenderingFramebuffer]));
@@ -297,14 +297,14 @@ void func_802A4300(void) {
 
     switch (gActiveScreenMode) {
         case SCREEN_MODE_2P_SPLITSCREEN_VERTICAL:
-            gDPFillRectangle(gDisplayListHead++, 157, 0, 159, 239);
+            gDPFillRectangle(gDisplayListHead++, ((SCREEN_WIDTH/2)-3), 0, ((SCREEN_WIDTH/2)-1), SCREEN_HEIGHT-1);
             break;
         case SCREEN_MODE_2P_SPLITSCREEN_HORIZONTAL:
-            gDPFillRectangle(gDisplayListHead++, 0, 119, 319, 121);
+            gDPFillRectangle(gDisplayListHead++, 0, ((SCREEN_WIDTH/2)-1), SCREEN_WIDTH-1, ((SCREEN_WIDTH/2)+1));
             break;
         case SCREEN_MODE_3P_4P_SPLITSCREEN:
-            gDPFillRectangle(gDisplayListHead++, 157, 0, 159, 239);
-            gDPFillRectangle(gDisplayListHead++, 0, 119, 319, 121);
+            gDPFillRectangle(gDisplayListHead++, ((SCREEN_WIDTH/2)-3), 0, ((SCREEN_WIDTH/2)-1), SCREEN_HEIGHT-1);
+            gDPFillRectangle(gDisplayListHead++, 0, ((SCREEN_WIDTH/2)-1), SCREEN_WIDTH-1, ((SCREEN_WIDTH/2)+1));
             break;
     }
     gDPPipeSync(gDisplayListHead++);
@@ -506,10 +506,10 @@ void render_skybox(Vtx* skybox, struct UnkStruct_800DC5EC* arg1, UNUSED s32 arg2
     horizonPoint[0] *= homogFactor;
     horizonPoint[1] *= homogFactor;
 
-    horizonPoint[0] *= 160.0f; // SCREEN_WIDTH / 2
-    horizonPoint[1] *= 120.0f; // SCREEN_HEIGHT / 2
+    horizonPoint[0] *= SCREEN_WIDTH/2.0f; // SCREEN_WIDTH / 2
+    horizonPoint[1] *= SCREEN_HEIGHT/2.0f; // SCREEN_HEIGHT / 2
 
-    horizonRow = 120 - (s16) horizonPoint[1];
+    horizonRow = (SCREEN_HEIGHT/2) - (s16) horizonPoint[1];
     arg1->cameraHeight = horizonRow;
 
     skybox[1].v.ob[1] = horizonRow;
@@ -585,16 +585,16 @@ void set_perspective_and_aspect_ratio(void) {
     }
     switch (gScreenModeSelection) { /* switch 1; irregular */
         case SCREEN_MODE_1P:        /* switch 1 */
-            gScreenAspect = 1.33333334f;
+            gScreenAspect = ((float)SCREEN_WIDTH/(float)SCREEN_HEIGHT);
             return;
         case SCREEN_MODE_2P_SPLITSCREEN_VERTICAL: /* switch 1 */
-            gScreenAspect = 0.66666667f;
+            gScreenAspect = ((float)SCREEN_WIDTH/(float)SCREEN_HEIGHT)*0.5f;
             return;
         case SCREEN_MODE_2P_SPLITSCREEN_HORIZONTAL: /* switch 1 */
-            gScreenAspect = 2.66666667f;
+            gScreenAspect = ((float)SCREEN_WIDTH/(float)SCREEN_HEIGHT)*2.0f;
             return;
         case SCREEN_MODE_3P_4P_SPLITSCREEN: /* switch 1 */
-            gScreenAspect = 1.33333334f;
+            gScreenAspect = ((float)SCREEN_WIDTH/(float)SCREEN_HEIGHT);
             return;
     }
 }
@@ -703,11 +703,11 @@ void func_802A53A4(void) {
     init_z_buffer();
     select_framebuffer();
     if (D_800DC5B4 != 0) {
-        render_skybox((Vtx*) sSkyboxP1, D_800DC5EC, 0x140, 0xF0, &gCameraZoom[0]);
+        render_skybox((Vtx*) sSkyboxP1, D_800DC5EC, SCREEN_WIDTH, SCREEN_HEIGHT, &gCameraZoom[0]);
         if (gGamestate != CREDITS_SEQUENCE) {
             func_80057FC4(0);
         }
-        func_802A487C((Vtx*) sSkyboxP1, D_800DC5EC, 0x140, 0xF0, &gCameraZoom[0]);
+        func_802A487C((Vtx*) sSkyboxP1, D_800DC5EC, SCREEN_WIDTH, SCREEN_HEIGHT, &gCameraZoom[0]);
         func_80093A30(0);
     }
 }
@@ -722,9 +722,9 @@ void func_802A54A8(void) {
     gSPSetGeometryMode(gDisplayListHead++, G_SHADE | G_SHADING_SMOOTH | G_CLIPPING);
 
     if (D_800DC5B4 != 0) {
-        render_skybox((Vtx*) sSkyboxP1, D_800DC5EC, 0x140, 0xF0, &gCameraZoom[0]);
+        render_skybox((Vtx*) sSkyboxP1, D_800DC5EC, SCREEN_WIDTH, SCREEN_HEIGHT, &gCameraZoom[0]);
         func_80057FC4(8);
-        func_802A487C((Vtx*) sSkyboxP1, D_800DC5EC, 0x140, 0xF0, &gCameraZoom[0]);
+        func_802A487C((Vtx*) sSkyboxP1, D_800DC5EC, SCREEN_WIDTH, SCREEN_HEIGHT, &gCameraZoom[0]);
         func_80093A30(8);
     }
 }
@@ -780,8 +780,8 @@ void func_802A5760(void) {
                          VIRTUAL_TO_PHYSICAL(gPhysicalFramebuffers[sRenderingFramebuffer]));
         gDPSetFillColor(gDisplayListHead++, 0x00010001);
         gDPPipeSync(gDisplayListHead++);
-        gDPSetScissor(gDisplayListHead++, G_SC_NON_INTERLACE, 160, 120, SCREEN_WIDTH, SCREEN_HEIGHT);
-        gDPFillRectangle(gDisplayListHead++, 160, 120, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1);
+        gDPSetScissor(gDisplayListHead++, G_SC_NON_INTERLACE, (SCREEN_WIDTH/2), (SCREEN_HEIGHT/2), SCREEN_WIDTH, SCREEN_HEIGHT);
+        gDPFillRectangle(gDisplayListHead++, (SCREEN_WIDTH/2), (SCREEN_HEIGHT/2), SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1);
         gDPPipeSync(gDisplayListHead++);
         gDPSetCycleType(gDisplayListHead++, G_CYC_1CYCLE);
 
@@ -1394,41 +1394,41 @@ void func_802A74BC(void) {
         switch (gActiveScreenMode) {
             case SCREEN_MODE_1P:
                 if (i == 0) {
-                    wrapper->screenStartX = 160;
+                    wrapper->screenStartX = SCREEN_WIDTH/2;
                 }
-                wrapper->screenStartY = 120;
+                wrapper->screenStartY = SCREEN_HEIGHT/2;
                 break;
             case SCREEN_MODE_2P_SPLITSCREEN_VERTICAL:
                 if (i == 0) {
-                    wrapper->screenStartX = 80;
-                    wrapper->screenStartY = 120;
+                    wrapper->screenStartX = SCREEN_WIDTH/4;
+                    wrapper->screenStartY = SCREEN_HEIGHT/2;
                 } else if (i == 1) {
-                    wrapper->screenStartX = 240;
-                    wrapper->screenStartY = 120;
+                    wrapper->screenStartX = (SCREEN_WIDTH*3)/4;
+                    wrapper->screenStartY = SCREEN_HEIGHT/2;
                 }
                 break;
             case SCREEN_MODE_2P_SPLITSCREEN_HORIZONTAL:
                 if (i == 0) {
-                    wrapper->screenStartX = 160;
-                    wrapper->screenStartY = 60;
+                    wrapper->screenStartX = SCREEN_WIDTH/2;
+                    wrapper->screenStartY = SCREEN_HEIGHT/4;
                 } else if (i == 1) {
-                    wrapper->screenStartX = 160;
-                    wrapper->screenStartY = 180;
+                    wrapper->screenStartX = SCREEN_WIDTH/2;
+                    wrapper->screenStartY = (SCREEN_HEIGHT*3)/4;
                 }
                 break;
             case SCREEN_MODE_3P_4P_SPLITSCREEN:
                 if (i == 0) {
-                    wrapper->screenStartX = 80;
-                    wrapper->screenStartY = 60;
+                    wrapper->screenStartX = SCREEN_WIDTH/4;
+                    wrapper->screenStartY = SCREEN_HEIGHT/4;
                 } else if (i == 1) {
-                    wrapper->screenStartX = 240;
-                    wrapper->screenStartY = 60;
+                    wrapper->screenStartX = (SCREEN_WIDTH*3)/4;
+                    wrapper->screenStartY = SCREEN_HEIGHT/4;
                 } else if (i == 2) {
-                    wrapper->screenStartX = 80;
-                    wrapper->screenStartY = 180;
+                    wrapper->screenStartX = SCREEN_WIDTH/4;
+                    wrapper->screenStartY = (SCREEN_HEIGHT*3)/4;
                 } else {
-                    wrapper->screenStartX = 240;
-                    wrapper->screenStartY = 180;
+                    wrapper->screenStartX = (SCREEN_WIDTH*3)/4;
+                    wrapper->screenStartY = (SCREEN_HEIGHT*3)/4;
                 }
                 break;
         }
@@ -1447,7 +1447,7 @@ void copy_framebuffer(s32 arg0, s32 arg1, s32 width, s32 height, u16* source, u1
 
     targetIndex = 0;
     for (var_v1 = 0; var_v1 < height; var_v1++) {
-        sourceIndex = ((arg1 + var_v1) * 320) + arg0;
+        sourceIndex = ((arg1 + var_v1) * SCREEN_WIDTH) + arg0;
         for (var_a1 = 0; var_a1 < width; var_a1++, targetIndex++, sourceIndex++) {
             target[targetIndex] = source[sourceIndex];
         }

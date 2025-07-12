@@ -212,20 +212,42 @@ void main_func(void) {
     osStartThread(&gIdleThread);
 }
 
+void vi_disp_size_set(OSViMode *mode, int width, int height){
+    mode->comRegs.width  = width;
+    mode->comRegs.xScale = ((width * 512) / 320);
+    if (height > 240) {
+        mode->comRegs.ctrl |= 0x40;
+        mode->fldRegs[0].origin = (width * 2);
+        mode->fldRegs[1].origin = (width * 4);
+        mode->fldRegs[0].yScale = (0x2000000 | ((height * 1024) / 240));
+        mode->fldRegs[1].yScale = (0x2000000 | ((height * 1024) / 240));
+        mode->fldRegs[0].vStart = (mode->fldRegs[1].vStart - 0x20002);
+    } else {
+        mode->fldRegs[0].origin = (width * 2);
+        mode->fldRegs[1].origin = (width * 4);
+        mode->fldRegs[0].yScale = ((height * 1024) / 240);
+        mode->fldRegs[1].yScale = ((height * 1024) / 240);
+    }
+}
+
 /**
  * Initialize hardware, start main thread, then idle.
  */
 void thread1_idle(void* arg) {
+    OSViMode *mode;
     osCreateViManager(OS_PRIORITY_VIMGR);
 #ifdef VERSION_EU
-    osViSetMode(&osViModeTable[OS_VI_PAL_LAN1]);
+    mode = &osViModeTable[OS_VI_PAL_LAN1];
+    
 #else // VERSION_US
     if (osTvType == TV_TYPE_NTSC) {
-        osViSetMode(&osViModeTable[OS_VI_NTSC_LAN1]);
+        mode = &osViModeTable[OS_VI_NTSC_LAN1];
     } else {
-        osViSetMode(&osViModeTable[OS_VI_MPAL_LAN1]);
+        mode = &osViModeTable[OS_VI_MPAL_LAN1];
     }
 #endif
+    vi_disp_size_set(mode, SCREEN_WIDTH, SCREEN_HEIGHT);
+    osViSetMode(mode);
     osViBlack(true);
     osViSetSpecialFeatures(OS_VI_GAMMA_OFF);
     osCreatePiManager(OS_PRIORITY_PIMGR, &gPIMesgQueue, gPIMesgBuf, ARRAY_COUNT(gPIMesgBuf));
