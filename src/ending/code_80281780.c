@@ -99,8 +99,8 @@ void load_ceremony_cutscene(void) {
     gCameraZoom[0] = 60.0f;
     D_800DC5EC->screenWidth = SCREEN_WIDTH;
     D_800DC5EC->screenHeight = SCREEN_HEIGHT;
-    D_800DC5EC->screenStartX = 160;
-    D_800DC5EC->screenStartY = 120;
+    D_800DC5EC->screenStartX = SCREEN_WIDTH/2;
+    D_800DC5EC->screenStartY = SCREEN_HEIGHT/2;
     gScreenModeSelection = SCREEN_MODE_1P;
     gNextFreeMemoryAddress = (s32) gFreeMemoryResetAnchor;
     gActiveScreenMode = SCREEN_MODE_1P;

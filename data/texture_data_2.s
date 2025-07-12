@@ -818,6 +818,16 @@ glabel gTexture7F109C
 glabel gTexture7F109C_end
 
 .align 2, 0x00
+glabel gTextureBackgroundBlueSky
+.incbin "textures/raw/custom_bg_bluesky.rgba16"
+glabel gTextureBackgroundBlueSky_end
+
+.align 2, 0x00
+glabel gTextureBackgroundSunset
+.incbin "textures/raw/custom_bg_sunset.rgba16"
+glabel gTextureBackgroundSunset_end
+
+.align 2, 0x00
 glabel gTexture7F1124
 .incbin "textures/raw/7F1124.i4"
 

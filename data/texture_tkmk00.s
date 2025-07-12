@@ -229,14 +229,6 @@ glabel gTextureMenuOK
 .incbin "bin/gTextureMenuOK.rgba16.tkmk00"
 glabel gTextureMenuOK_end
 
-glabel gTextureBackgroundBlueSky
-.incbin "bin/gTextureBackgroundBlueSky.rgba16.tkmk00"
-glabel gTextureBackgroundBlueSky_end
-
-glabel gTextureBackgroundSunset
-.incbin "bin/gTextureBackgroundSunset.rgba16.tkmk00"
-glabel gTextureBackgroundSunset_end
-
 glabel gTextureGreenGoldStripe
 .incbin "bin/gTextureGreenGoldStripe.rgba16.tkmk00"
 glabel gTextureGreenGoldStripe_end

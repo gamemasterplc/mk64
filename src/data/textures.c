@@ -4151,7 +4151,7 @@ MenuTexture D_02004584[1] = {
  *
  */
 MenuTexture seg2_blue_sky_background_texture[2] = {
-    { 0, gTextureBackgroundBlueSky, 320, 240, 0, 0, 0xcd60, 0 },
+    { 5, gTextureBackgroundBlueSky, 424, 240, 0, 0, 0, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -4160,7 +4160,7 @@ MenuTexture seg2_blue_sky_background_texture[2] = {
  *
  */
 MenuTexture seg2_sunset_background_texture[2] = {
-    { 0, gTextureBackgroundSunset, 320, 240, 0, 0, 0x93c4, 0 },
+    { 5, gTextureBackgroundSunset, 424, 240, 0, 0, 0, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 

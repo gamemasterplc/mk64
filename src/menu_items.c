@@ -1353,8 +1353,8 @@ void func_80091FA4(void) {
     func_8009A344();
     clear_menus();
     func_80092258();
-    add_menu_item(MENU_ITEM_TYPE_096, 0x00000064, 0x00000024, MENU_ITEM_PRIORITY_1);
-    add_menu_item(MENU_ITEM_TYPE_097, 0x00000064, 0x000000DD, MENU_ITEM_PRIORITY_1);
+    add_menu_item(MENU_ITEM_TYPE_096, ((SCREEN_WIDTH/2)-60), 36, MENU_ITEM_PRIORITY_1);
+    add_menu_item(MENU_ITEM_TYPE_097, ((SCREEN_WIDTH/2)-60), SCREEN_HEIGHT-19, MENU_ITEM_PRIORITY_1);
     add_menu_item(MENU_ITEM_TYPE_098, 0, 0, MENU_ITEM_PRIORITY_0);
     add_menu_item(MENU_ITEM_PAUSE, 0, 0, MENU_ITEM_PRIORITY_0);
     if (gModeSelection == TIME_TRIALS) {
@@ -2482,50 +2482,50 @@ void func_80095574(void) {
     }
     if (gDebugMenuSelection > DEBUG_MENU_DISABLED) { // If not disabled
         load_debug_font();
-        debug_print_str2(0x00000050, 0x00000064, "debug_mode");
+        debug_print_str2((SCREEN_WIDTH/2)-80, ((SCREEN_HEIGHT/2)-20), "debug_mode");
         switch (gDebugMenuSelection) {
             case DEBUG_MENU_DEBUG_MODE:
-                debug_print_str2(0x00000046, 0x00000064, "*");
+                debug_print_str2((SCREEN_WIDTH/2)-90, ((SCREEN_HEIGHT/2)-20), "*");
                 break;
             case DEBUG_MENU_COURSE:
-                debug_print_str2(0x00000046, 0x0000006E, "*");
+                debug_print_str2((SCREEN_WIDTH/2)-90, ((SCREEN_HEIGHT/2)-10), "*");
                 break;
             case DEBUG_MENU_SCREEN_MODE:
-                debug_print_str2(0x00000046, 0x00000078, "*");
+                debug_print_str2((SCREEN_WIDTH/2)-90, (SCREEN_HEIGHT/2), "*");
                 break;
             case DEBUG_MENU_PLAYER:
-                debug_print_str2(0x00000046, 0x00000082, "*");
+                debug_print_str2((SCREEN_WIDTH/2)-90, ((SCREEN_HEIGHT/2)+10), "*");
                 break;
             case DEBUG_MENU_SOUND_MODE:
-                debug_print_str2(0x00000046, 0x0000008C, "*");
+                debug_print_str2((SCREEN_WIDTH/2)-90, ((SCREEN_HEIGHT/2)+20), "*");
                 break;
             case DEBUG_MENU_GIVE_ALL_GOLD_CUP:
-                debug_print_str2(0x00000046, 0x00000096, "*");
+                debug_print_str2((SCREEN_WIDTH/2)-90, ((SCREEN_HEIGHT/2)+30), "*");
                 break;
         }
         if (gEnableDebugMode) {
-            debug_print_str2(0x000000AA, 0x00000064, "on");
+            debug_print_str2((SCREEN_WIDTH/2)+10, ((SCREEN_HEIGHT/2)-20), "on");
         } else {
-            debug_print_str2(0x000000AA, 0x00000064, "off");
+            debug_print_str2((SCREEN_WIDTH/2)+10, ((SCREEN_HEIGHT/2)-20), "off");
         }
         if ((gCurrentCourseId >= (NUM_COURSES - 1)) || (gCurrentCourseId < 0)) {
             gCurrentCourseId = 0;
         }
-        print_str_num(0x00000050, 0x0000006E, "map_number", gCurrentCourseId);
+        print_str_num((SCREEN_WIDTH/2)-80, ((SCREEN_HEIGHT/2)-10), "map_number", gCurrentCourseId);
         if (gCurrentCourseId < 0xA) {
             var_v0 = 0;
         } else {
             var_v0 = 8;
         }
-        debug_print_str2(var_v0 + 0xB9, 0x0000006E, GET_COURSE_debugName);
-        debug_print_str2(0x00000050, 0x00000078, "screen_mode");
-        debug_print_str2(0x000000AA, 0x00000078, gDebugScreenModeNames[gScreenModeListIndex]);
-        debug_print_str2(0x00000050, 0x00000082, "player");
-        debug_print_str2(0x000000AA, 0x00000082, gDebugCharacterNames[gCharacterSelections[0]]);
-        debug_print_str2(0x00000050, 0x0000008C, "sound mode");
-        debug_print_str2(0x000000AA, 0x0000008C, gDebugSoundModeNames[gSoundMode]);
+        debug_print_str2(var_v0 + ((SCREEN_WIDTH/2)+25), ((SCREEN_HEIGHT/2)-10), GET_COURSE_debugName);
+        debug_print_str2((SCREEN_WIDTH/2)-80, (SCREEN_HEIGHT/2), "screen_mode");
+        debug_print_str2((SCREEN_WIDTH/2)+10, (SCREEN_HEIGHT/2), gDebugScreenModeNames[gScreenModeListIndex]);
+        debug_print_str2((SCREEN_WIDTH/2)-80, ((SCREEN_HEIGHT/2)+10), "player");
+        debug_print_str2((SCREEN_WIDTH/2)+10, ((SCREEN_HEIGHT/2)+10), gDebugCharacterNames[gCharacterSelections[0]]);
+        debug_print_str2((SCREEN_WIDTH/2)-80, ((SCREEN_HEIGHT/2)+20), "sound mode");
+        debug_print_str2((SCREEN_WIDTH/2)+10, ((SCREEN_HEIGHT/2)+20), gDebugSoundModeNames[gSoundMode]);
         if (gDebugMenuSelection == DEBUG_MENU_GIVE_ALL_GOLD_CUP) {
-            debug_print_str2(0x00000050, 0x00000096, "push b to get all goldcup");
+            debug_print_str2((SCREEN_WIDTH/2)-80, ((SCREEN_HEIGHT/2)+30), "push b to get all goldcup");
         }
         func_80057778();
     }
@@ -4319,7 +4319,7 @@ Gfx* print_letter(Gfx* arg0, MenuTexture* glyphTexture, f32 arg2, f32 arg3, s32 
         var_v0 = 0;
 
         thing0 = var_s0->dX + arg2;
-        if (thing0 > 320.0f) {
+        if (thing0 > SCREEN_WIDTH) {
             var_v0 = 1;
         }
         thing0 += var_s0->width * scaleX;
@@ -4331,7 +4331,7 @@ Gfx* print_letter(Gfx* arg0, MenuTexture* glyphTexture, f32 arg2, f32 arg3, s32 
             var_v0 += 1;
         }
         thing1 -= var_s0->height * scaleY;
-        if (thing1 > 240.0f) {
+        if (thing1 > SCREEN_HEIGHT) {
             var_v0 += 1;
         }
 
@@ -5416,7 +5416,7 @@ void add_menu_item(s32 type, s32 column, s32 row, s8 priority) {
             load_menu_img(D_0200184C);
             break;
         case MENU_ITEM_UI_START_BACKGROUND:
-            load_menu_img_comp_type(gMenuTexturesBackground[has_unlocked_extra_mode()], LOAD_MENU_IMG_TKMK00_ONCE);
+            load_menu_img(gMenuTexturesBackground[has_unlocked_extra_mode()]);
             break;
         case MENU_ITEM_UI_LOGO_AND_COPYRIGHT:
             load_mario_kart_64_logo();
@@ -5429,10 +5429,10 @@ void add_menu_item(s32 type, s32 column, s32 row, s8 priority) {
         case MAIN_MENU_BACKGROUND:
         case CHARACTER_SELECT_BACKGROUND:
         case COURSE_SELECT_BACKGROUND:
-            load_menu_img_comp_type(gMenuTexturesBackground[has_unlocked_extra_mode()], LOAD_MENU_IMG_TKMK00_ONCE);
+            load_menu_img(gMenuTexturesBackground[has_unlocked_extra_mode()]);
             load_menu_img_comp_type(D_02004B74, LOAD_MENU_IMG_TKMK00_ONCE);
             convert_img_to_greyscale(0, 0x00000019);
-            adjust_img_colour(0, 320*240, D_800E74E8[type - MAIN_MENU_BACKGROUND].red,
+            adjust_img_colour(0, 424*240, D_800E74E8[type - MAIN_MENU_BACKGROUND].red,
                               D_800E74E8[type - MAIN_MENU_BACKGROUND].green,
                               D_800E74E8[type - MAIN_MENU_BACKGROUND].blue);
             break;
@@ -5804,7 +5804,7 @@ void render_menus(MenuItem* arg0) {
                     gDisplayListHead, gMenuTexturesBackground[has_unlocked_extra_mode()], arg0->column, arg0->row);
                 break;
             case MENU_ITEM_UI_LOGO_AND_COPYRIGHT: /* switch 6 */
-                render_game_logo((arg0->column + 0xA0), (arg0->row + 0x47));
+                render_game_logo((arg0->column + (SCREEN_WIDTH/2)), (arg0->row + ((SCREEN_HEIGHT*71)/240)));
                 gDisplayListHead =
                     render_menu_textures(gDisplayListHead, seg2_copyright_1996_texture, arg0->column, arg0->row);
                 break;
@@ -7015,15 +7015,15 @@ void func_800A1FB0(MenuItem* arg0) {
 void func_800A2D1C(MenuItem* arg0) {
     switch (D_80164A28) {
         case 1:
-            gDisplayListHead = func_80098FC8(gDisplayListHead, 0, 0, 0x13F, 0x28);
-            gDisplayListHead = func_80098FC8(gDisplayListHead, 0, 0xC7, 0x13F, 0xEF);
+            gDisplayListHead = func_80098FC8(gDisplayListHead, 0, 0, SCREEN_WIDTH-1, 40);
+            gDisplayListHead = func_80098FC8(gDisplayListHead, 0, SCREEN_HEIGHT-41, SCREEN_WIDTH-1, SCREEN_HEIGHT-1);
             arg0->param1 = 0x28;
             break;
         case 2:
             arg0->param1 -= 2;
             if (arg0->param1 > 0) {
-                gDisplayListHead = func_80098FC8(gDisplayListHead, 0, 0, 0x13F, arg0->param1);
-                gDisplayListHead = func_80098FC8(gDisplayListHead, 0, 0xEF - arg0->param1, 0x13F, 0xEF);
+                gDisplayListHead = func_80098FC8(gDisplayListHead, 0, 0, SCREEN_WIDTH-1, arg0->param1);
+                gDisplayListHead = func_80098FC8(gDisplayListHead, 0, (SCREEN_HEIGHT-1) - arg0->param1, SCREEN_WIDTH-1, SCREEN_HEIGHT-1);
             } else {
                 arg0->type = 0;
             }
@@ -7034,8 +7034,8 @@ void func_800A2D1C(MenuItem* arg0) {
             } else {
                 arg0->param1 -= 2;
                 if (arg0->param1 > 0) {
-                    gDisplayListHead = func_80098FC8(gDisplayListHead, 0, 0, 0x13F, arg0->param1);
-                    gDisplayListHead = func_80098FC8(gDisplayListHead, 0, 0xEF - arg0->param1, 0x13F, 0xEF);
+                    gDisplayListHead = func_80098FC8(gDisplayListHead, 0, 0, SCREEN_WIDTH-1, arg0->param1);
+                    gDisplayListHead = func_80098FC8(gDisplayListHead, 0, (SCREEN_HEIGHT-1) - arg0->param1, SCREEN_WIDTH-1, SCREEN_HEIGHT-1);
                 } else {
                     arg0->type = 0;
                 }
@@ -8234,7 +8234,7 @@ void func_800A70E8(MenuItem* arg0) {
             var_s0 = temp_f6;
         }
         gDisplayListHead =
-            draw_box(gDisplayListHead, 0x000000C0, 0x00000022, var_s0 + 0xC6, 0x00000039, 0, 0, 0, 0x00000096);
+            draw_box(gDisplayListHead, (SCREEN_WIDTH-128), 0x00000022, var_s0 +  (SCREEN_WIDTH-122), 0x00000039, 0, 0, 0, 0x00000096);
         alpha = 0x180 - ((arg0->param1 % 32) * 8);
         if (alpha >= 0x100) {
             alpha = 0xFF;
@@ -8242,7 +8242,7 @@ void func_800A70E8(MenuItem* arg0) {
         gDPSetPrimColor(gDisplayListHead++, 0, 0, 0x00, 0x00, 0x00, alpha);
         set_text_color(TEXT_RED);
         for (loopIndex = 0x2C, stringIndex = 0; loopIndex < 0x40; loopIndex += 0xA, stringIndex++) {
-            print_text_mode_2(0x000000C0, loopIndex, D_800E7A34[stringIndex], 0, 0.45f, 0.45f);
+            print_text_mode_2((SCREEN_WIDTH-128), loopIndex, D_800E7A34[stringIndex], 0, 0.45f, 0.45f);
         }
     }
 }
@@ -8251,10 +8251,10 @@ void func_800A70E8(MenuItem* arg0) {
 void func_800A7258(MenuItem* arg0) {
     if (arg0->state == 0) {
         // If shading layer is fading in
-        gDisplayListHead = draw_box(gDisplayListHead, 0, 0, 0x13F, 0xEF, 0, 0, 0, arg0->param1);
+        gDisplayListHead = draw_box(gDisplayListHead, 0, 0, (SCREEN_WIDTH-1), (SCREEN_HEIGHT-1), 0, 0, 0, arg0->param1);
     } else {
         // All other stages of the podium scene
-        gDisplayListHead = draw_box(gDisplayListHead, 0, 0, 0x13F, 0xEF, 0, 0, 0, 0x64);
+        gDisplayListHead = draw_box(gDisplayListHead, 0, 0, (SCREEN_WIDTH-1), (SCREEN_HEIGHT-1), 0, 0, 0, 0x64);
     }
 }
 
@@ -10460,7 +10460,7 @@ void func_800ABCF4(MenuItem* arg0) {
         case 0:
             arg0->column = 0;
             arg0->state = 1;
-            arg0->param2 = (get_string_width(gCupNames[D_800DC540]) / 2) + 0xA0;
+            arg0->param2 = (get_string_width(gCupNames[D_800DC540]) / 2) + (SCREEN_WIDTH/2);
             /* fallthrough */
         case 1:
             func_800A9208(arg0, arg0->param2);
@@ -10495,7 +10495,7 @@ void func_800ABEAC(MenuItem* arg0) {
             arg0->visible = why;
             break;
         case 2:
-            if (arg0->row < 0x104) {
+            if (arg0->row < (SCREEN_HEIGHT+20)) {
                 arg0->row += 2;
             } else {
                 arg0->type = 0;
@@ -10505,7 +10505,7 @@ void func_800ABEAC(MenuItem* arg0) {
             if ((gModeSelection != GRAND_PRIX) || (gPlayerCountSelection1 != why) || (gDemoUseController != 0)) {
                 arg0->type = 0;
             } else {
-                if (arg0->row < 0x104) {
+                if (arg0->row < (SCREEN_HEIGHT+20)) {
                     arg0->row += 2;
                 } else {
                     arg0->type = 0;
@@ -10518,9 +10518,9 @@ void func_800ABEAC(MenuItem* arg0) {
 void func_800ABF68(MenuItem* arg0) {
     switch (arg0->state) {
         case 0:
-            arg0->column = 0x140;
+            arg0->column = SCREEN_WIDTH;
             arg0->state = 1;
-            arg0->param2 = 0xA0 - (get_string_width(gCourseNames[gCurrentCourseId]) / 2);
+            arg0->param2 = (SCREEN_WIDTH/2) - (get_string_width(gCourseNames[gCurrentCourseId]) / 2);
             /* fallthrough */
         case 1:
             func_800A9208(arg0, arg0->param2);
@@ -10655,7 +10655,7 @@ void func_800AC458(MenuItem* arg0) {
                 arg0->column = 0;
                 arg0->state = 2;
                 arg0->param1 = 0;
-                D_800DC5EC->screenStartX = SCREEN_HEIGHT;
+                D_800DC5EC->screenStartX = ((SCREEN_WIDTH*3)/4);
                 D_800DC5F0->screenStartX = SCREEN_WIDTH/4;
             }
             break;

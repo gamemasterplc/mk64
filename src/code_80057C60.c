@@ -1913,7 +1913,7 @@ void func_8005AB60(void) {
             }
             break;
         case 2:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap1CompletionTimeX, SCREEN_WIDTH-80, 4) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap1CompletionTimeX, SCREEN_WIDTH-76, 4) != 0) {
                 playerHUD[PLAYER_ONE].unk_7B++;
             }
             break;
@@ -1992,37 +1992,37 @@ void func_8005AB60(void) {
         case 0:
             break;
         case 1:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-76, 0x10) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-92, 0x10) != 0) {
                 playerHUD[PLAYER_ONE].unk_7C++;
             }
             break;
         case 2:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-60, 4) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-76, 4) != 0) {
                 playerHUD[PLAYER_ONE].unk_7C++;
             }
             break;
         case 3:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-76, 4) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-92, 4) != 0) {
                 playerHUD[PLAYER_ONE].unk_7C++;
             }
             break;
         case 4:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-68, 4) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-84, 4) != 0) {
                 playerHUD[PLAYER_ONE].unk_7C++;
             }
             break;
         case 5:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-76, 4) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-92, 4) != 0) {
                 playerHUD[PLAYER_ONE].unk_7C++;
             }
             break;
         case 6:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-72, 2) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-88, 2) != 0) {
                 playerHUD[PLAYER_ONE].unk_7C++;
             }
             break;
         case 7:
-            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-76, 2) != 0) {
+            if (s16_step_towards(&playerHUD[PLAYER_ONE].lap2CompletionTimeX, SCREEN_WIDTH-92, 2) != 0) {
                 playerHUD[PLAYER_ONE].unk_7C++;
             }
             break;

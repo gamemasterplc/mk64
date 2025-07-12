@@ -370,8 +370,8 @@ void func_8028E678(void) {
             D_800DC5F0->screenStartX += 4;
             D_800DC5F0->screenStartY += 2;
 
-            if (D_800DC5F0->screenStartX > SCREEN_HEIGHT) {
-                D_800DC5F0->screenStartX = SCREEN_HEIGHT;
+            if (D_800DC5F0->screenStartX > ((SCREEN_WIDTH*3)/4)) {
+                D_800DC5F0->screenStartX = ((SCREEN_WIDTH*3)/4);
                 phi_a0_10++;
             }
             if (D_800DC5F0->screenStartY > ((SCREEN_HEIGHT*3)/4)) {

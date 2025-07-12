@@ -8,6 +8,7 @@
 #include "math_util.h"
 #include "ceremony_and_credits.h"
 #include "main.h"
+#include "mk64.h"
 
 void update_camera_podium_ceremony(void) {
     Camera* camera;
@@ -38,7 +39,7 @@ void init_camera_podium_ceremony(void) {
     cameras[0].up[1] = 1.0f;
     cameras[0].up[2] = 0.0f;
     gCameraZoom[0] = 40.0f;
-    gScreenAspect = 1.33333333f;
+    gScreenAspect = ((float)SCREEN_WIDTH/(float)SCREEN_HEIGHT);
     gCourseNearPersp = 3.0f;
     gCourseFarPersp = 6800.0f;
     init_cinematic_camera();
