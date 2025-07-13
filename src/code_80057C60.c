@@ -2215,9 +2215,9 @@ void func_8005B914(void) {
                 D_8018D050[i + 2] = -32.0f;
                 D_8018D050[i + 3] = -32.0f;
             }
-            D_8018D028[0] = 360.0f;
+            D_8018D028[0] = SCREEN_WIDTH+60;
             D_8018D050[0] = 110.0f;
-            D_8018D0C8[0] = 44.0f;
+            D_8018D0C8[0] = ((SCREEN_WIDTH/2)-116);
             D_8018D078[0] = -16.0f;
             D_801657E2 = 1;
             func_8005AA4C();
@@ -2226,9 +2226,9 @@ void func_8005B914(void) {
             func_8005AA94(4);
             break;
         case 0x70:
-            D_8018D028[1] = 360.0f;
+            D_8018D028[1] = SCREEN_WIDTH+60;
             D_8018D050[1] = 110.0f;
-            D_8018D0C8[1] = 76.0f;
+            D_8018D0C8[1] = ((SCREEN_WIDTH/2)-84);
             D_8018D078[1] = -16.0f;
             func_8005AA4C();
             break;
@@ -2236,9 +2236,9 @@ void func_8005B914(void) {
             func_8005AA94(4);
             break;
         case 0x72:
-            D_8018D028[2] = 360.0f;
+            D_8018D028[2] = SCREEN_WIDTH+60;
             D_8018D050[2] = 110.0f;
-            D_8018D0C8[2] = 108.0f;
+            D_8018D0C8[2] = ((SCREEN_WIDTH/2)-52);
             D_8018D078[2] = -16.0f;
             func_8005AA4C();
             break;
@@ -2246,9 +2246,9 @@ void func_8005B914(void) {
             func_8005AA94(4);
             break;
         case 0x74:
-            D_8018D028[3] = 360.0f;
+            D_8018D028[3] = SCREEN_WIDTH+60;
             D_8018D050[3] = 110.0f;
-            D_8018D0C8[3] = 140.0f;
+            D_8018D0C8[3] = ((SCREEN_WIDTH/2)-20);
             D_8018D078[3] = -16.0f;
             func_8005AA4C();
             break;
@@ -2256,9 +2256,9 @@ void func_8005B914(void) {
             func_8005AA94(4);
             break;
         case 0x76:
-            D_8018D028[4] = 360.0f;
+            D_8018D028[4] = SCREEN_WIDTH+60;
             D_8018D050[4] = 110.0f;
-            D_8018D0C8[4] = 180.0f;
+            D_8018D0C8[4] = ((SCREEN_WIDTH/2)+20);
             D_8018D078[4] = -16.0f;
             func_8005AA4C();
             break;
@@ -2266,9 +2266,9 @@ void func_8005B914(void) {
             func_8005AA94(4);
             break;
         case 0x78:
-            D_8018D028[5] = 360.0f;
+            D_8018D028[5] = SCREEN_WIDTH+60;
             D_8018D050[5] = 110.0f;
-            D_8018D0C8[5] = 212.0f;
+            D_8018D0C8[5] = ((SCREEN_WIDTH/2)+52);
             D_8018D078[5] = -16.0f;
             func_8005AA4C();
             break;
@@ -2276,9 +2276,9 @@ void func_8005B914(void) {
             func_8005AA94(4);
             break;
         case 0x7A:
-            D_8018D028[6] = 360.0f;
+            D_8018D028[6] = SCREEN_WIDTH+60;
             D_8018D050[6] = 110.0f;
-            D_8018D0C8[6] = 244.0f;
+            D_8018D0C8[6] = ((SCREEN_WIDTH/2)+84);
             D_8018D078[6] = -16.0f;
             func_8005AA4C();
             break;
@@ -2286,9 +2286,9 @@ void func_8005B914(void) {
             func_8005AA94(4);
             break;
         case 0x7C:
-            D_8018D028[7] = 360.0f;
+            D_8018D028[7] = SCREEN_WIDTH+60;
             D_8018D050[7] = 110.0f;
-            D_8018D0C8[7] = 276.0f;
+            D_8018D0C8[7] = ((SCREEN_WIDTH/2)+116);
             D_8018D078[7] = -16.0f;
             func_8005AA4C();
             break;

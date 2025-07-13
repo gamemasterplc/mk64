@@ -1209,9 +1209,9 @@ MenuTexture D_020014A0[2] = {
  *
  */
 MenuTexture D_020014C8[6] = {
-    { 0, gTextureGoldBar, 256, 40, 32, 25, 0xd4c, 0 },  { 0, gTexturePinkBar, 90, 16, 65, 70, 0x468, 0 },
-    { 0, gTexturePinkBar, 90, 16, 164, 70, 0x468, 0 },  { 0, gTexturePinkBar, 90, 16, 65, 200, 0x468, 0 },
-    { 0, gTexturePinkBar, 90, 16, 164, 200, 0x468, 0 }, { 0, NULL, 0, 0, 0, 0, 0, 0 },
+    { 0, gTextureGoldBar, 256, 40, ((SCREEN_WIDTH/2)-128), 25, 0xd4c, 0 },  { 0, gTexturePinkBar, 90, 16, ((SCREEN_WIDTH/2)-95), 70, 0x468, 0 },
+    { 0, gTexturePinkBar, 90, 16, ((SCREEN_WIDTH/2)+4), 70, 0x468, 0 },  { 0, gTexturePinkBar, 90, 16, ((SCREEN_WIDTH/2)-95), 200, 0x468, 0 },
+    { 0, gTexturePinkBar, 90, 16, ((SCREEN_WIDTH/2)+4), 200, 0x468, 0 }, { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
 /**
@@ -1219,8 +1219,8 @@ MenuTexture D_020014C8[6] = {
  *
  */
 MenuTexture D_02001540[3] = {
-    { 0, gTextureGreenGoldStripe, 256, 29, 32, 91, 0xbec, 0 },
-    { 0, gTextureGoldStripe, 256, 15, 32, 180, 0x6f8, 0 },
+    { 0, gTextureGreenGoldStripe, 256, 29, ((SCREEN_WIDTH/2)-128), 91, 0xbec, 0 },
+    { 0, gTextureGoldStripe, 256, 15, ((SCREEN_WIDTH/2)-128), 180, 0x6f8, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -1234,7 +1234,7 @@ MenuTexture D_0200157C[2] = {
  *
  */
 MenuTexture D_020015A4[2] = {
-    { 3, gTexture7ED50C, 256, 5, 32, 120, 0x196, 0 },
+    { 3, gTexture7ED50C, 256, 5, ((SCREEN_WIDTH/2)-128), 120, 0x196, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -1243,10 +1243,10 @@ MenuTexture D_020015A4[2] = {
  *
  */
 MenuTexture D_020015CC[5] = {
-    { 3, gTextureSelectRecord, 68, 10, 75, 74, 0x378, 0 },
-    { 3, gTextureTextEnd, 20, 10, 200, 74, 0x12f, 0 },
-    { 3, gTextureTextErase, 28, 10, 96, 204, 0x19e, 0 },
-    { 3, gTextureTextQuit, 24, 10, 198, 204, 0x149, 0 },
+    { 3, gTextureSelectRecord, 68, 10, ((SCREEN_WIDTH/2)-85), 74, 0x378, 0 },
+    { 3, gTextureTextEnd, 20, 10, ((SCREEN_WIDTH/2)+40), 74, 0x12f, 0 },
+    { 3, gTextureTextErase, 28, 10, ((SCREEN_WIDTH/2)-64), 204, 0x19e, 0 },
+    { 3, gTextureTextQuit, 24, 10, ((SCREEN_WIDTH/2)+38), 204, 0x149, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -1255,7 +1255,7 @@ MenuTexture D_020015CC[5] = {
  *
  */
 MenuTexture D_02001630[2] = {
-    { 3, gTextureTableOfContents, 88, 10, 116, 94, 0x42d, 0 },
+    { 3, gTextureTableOfContents, 88, 10, ((SCREEN_WIDTH/2)-44), 94, 0x42d, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -1264,10 +1264,10 @@ MenuTexture D_02001630[2] = {
  *
  */
 MenuTexture D_02001658[5] = {
-    { 3, gTextureTextHash, 8, 10, 48, 108, 0x07e, 0 },
-    { 3, gTextureTextGameData, 56, 10, 132, 108, 0x2c4, 0 },
-    { 3, gTextureTextPages, 32, 10, 252, 108, 0x1c1, 0 },
-    { 3, gTextureTextPagesFree, 56, 10, 132, 184, 0x2c2, 0 },
+    { 3, gTextureTextHash, 8, 10, ((SCREEN_WIDTH/2)-112), 108, 0x07e, 0 },
+    { 3, gTextureTextGameData, 56, 10, ((SCREEN_WIDTH/2)-28), 108, 0x2c4, 0 },
+    { 3, gTextureTextPages, 32, 10, ((SCREEN_WIDTH/2)+92), 108, 0x1c1, 0 },
+    { 3, gTextureTextPagesFree, 56, 10, ((SCREEN_WIDTH/2)-28), 184, 0x2c2, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -1384,7 +1384,7 @@ MenuTexture D_02001874[2] = {
  *
  */
 MenuTexture D_0200189C[2] = {
-    { 3, gTextureN64ControllerPakDataSelect, 180, 32, 70, 29, 0x1128, 0 },
+    { 3, gTextureN64ControllerPakDataSelect, 180, 32, ((SCREEN_WIDTH/2)-90), 29, 0x1128, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -1393,7 +1393,7 @@ MenuTexture D_0200189C[2] = {
  *
  */
 MenuTexture D_020018C4[2] = {
-    { 3, gTextureEraseDataRecordConfirmation, 180, 32, 70, 29, 0xff4, 0 },
+    { 3, gTextureEraseDataRecordConfirmation, 180, 32, ((SCREEN_WIDTH/2)-90), 29, 0xff4, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -1402,7 +1402,7 @@ MenuTexture D_020018C4[2] = {
  *
  */
 MenuTexture D_020018EC[2] = {
-    { 3, gTextureRecordNotErased, 180, 32, 70, 29, 0x8d1, 0 },
+    { 3, gTextureRecordNotErased, 180, 32, ((SCREEN_WIDTH/2)-90), 29, 0x8d1, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -1411,7 +1411,7 @@ MenuTexture D_020018EC[2] = {
  *
  */
 MenuTexture D_02001914[2] = {
-    { 3, gTexturePlaceN64ControllerPakIntoController1, 180, 32, 70, 29, 0xc4a, 0 },
+    { 3, gTexturePlaceN64ControllerPakIntoController1, 180, 32, ((SCREEN_WIDTH/2)-90), 29, 0xc4a, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -1420,7 +1420,7 @@ MenuTexture D_02001914[2] = {
  *
  */
 MenuTexture D_0200193C[2] = {
-    { 3, gTexturePleaseReinsertOriginalN64ControllerPak, 180, 32, 70, 29, 0xcd6, 0 },
+    { 3, gTexturePleaseReinsertOriginalN64ControllerPak, 180, 32, ((SCREEN_WIDTH/2)-90), 29, 0xcd6, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -1429,7 +1429,7 @@ MenuTexture D_0200193C[2] = {
  *
  */
 MenuTexture D_02001964[2] = {
-    { 3, gTextureErasingSelectedRecord, 180, 32, 70, 29, 0xc02, 0 },
+    { 3, gTextureErasingSelectedRecord, 180, 32, ((SCREEN_WIDTH/2)-90), 29, 0xc02, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -4435,7 +4435,7 @@ MenuTexture seg2_P4_border_texture[3] = {
  *
  */
 MenuTexture D_02004B4C[2] = {
-    { 0, gTexturePlayerSelect, 220, 32, 51, 16, 0x0, 0 },
+    { 0, gTexturePlayerSelect, 220, 32, ((SCREEN_WIDTH/2)-109), 16, 0x0, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -4453,7 +4453,7 @@ MenuTexture D_02004B74[2] = {
  *
  */
 MenuTexture seg2_menu_select_texture[2] = {
-    { 0, gTextureMapSelect, 190, 32, 65, 18, 0x0, 0 },
+    { 0, gTextureMapSelect, 190, 32, (SCREEN_WIDTH/2)-95, 18, 0x0, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -4498,7 +4498,7 @@ MenuTexture seg2_special_cup_texture[2] = {
  *
  */
 MenuTexture seg2_mario_raceway_preview_small_texture[2] = {
-    { 0, gTextureCoursePreviewMarioRaceway, 128, 78, 23, 112, 0x1e3d, 0 },
+    { 0, gTextureCoursePreviewMarioRaceway, 128, 78, (SCREEN_WIDTH/2)-137, SCREEN_HEIGHT-128, 0x1e3d, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -4507,10 +4507,10 @@ MenuTexture seg2_mario_raceway_preview_small_texture[2] = {
  *
  */
 MenuTexture seg2_mushroom_cup_title_texture[5] = {
-    { 1, gTextureTitleLuigiRaceway, 140, 18, 157, 112, 0x0, 0 },
-    { 1, gTextureTitleMooMooFarm, 140, 18, 157, 136, 0x0, 0 },
-    { 1, gTextureTitleKoopaTroopaBeach, 140, 18, 157, 160, 0x0, 0 },
-    { 1, gTextureTitleKalimariDesert, 140, 18, 157, 184, 0x0, 0 },
+    { 1, gTextureTitleLuigiRaceway, 140, 18, (SCREEN_WIDTH/2)-3, SCREEN_HEIGHT-128, 0x0, 0 },
+    { 1, gTextureTitleMooMooFarm, 140, 18, (SCREEN_WIDTH/2)-3, SCREEN_HEIGHT-104, 0x0, 0 },
+    { 1, gTextureTitleKoopaTroopaBeach, 140, 18, (SCREEN_WIDTH/2)-3, SCREEN_HEIGHT-80, 0x0, 0 },
+    { 1, gTextureTitleKalimariDesert, 140, 18, (SCREEN_WIDTH/2)-3, SCREEN_HEIGHT-56, 0x0, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -4519,10 +4519,10 @@ MenuTexture seg2_mushroom_cup_title_texture[5] = {
  *
  */
 MenuTexture seg2_flower_cup_title_texture[5] = {
-    { 1, gTextureTitleToadsTurnpike, 140, 18, 157, 112, 0x0, 0 },
-    { 1, gTextureTitleFrappeSnowland, 140, 18, 157, 136, 0x0, 0 },
-    { 1, gTextureTitleChocoMountain, 140, 18, 157, 160, 0x0, 0 },
-    { 1, gTextureTitleMarioRaceway, 140, 18, 157, 184, 0x0, 0 },
+    { 1, gTextureTitleToadsTurnpike, 140, 18, (SCREEN_WIDTH/2)-3, SCREEN_HEIGHT-128, 0x0, 0 },
+    { 1, gTextureTitleFrappeSnowland, 140, 18, (SCREEN_WIDTH/2)-3, SCREEN_HEIGHT-104, 0x0, 0 },
+    { 1, gTextureTitleChocoMountain, 140, 18, (SCREEN_WIDTH/2)-3, SCREEN_HEIGHT-80, 0x0, 0 },
+    { 1, gTextureTitleMarioRaceway, 140, 18, (SCREEN_WIDTH/2)-3, SCREEN_HEIGHT-56, 0x0, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -4531,10 +4531,10 @@ MenuTexture seg2_flower_cup_title_texture[5] = {
  *
  */
 MenuTexture seg2_star_cup_title_texture[5] = {
-    { 1, gTextureTitleWarioStadium, 140, 18, 157, 112, 0x0, 0 },
-    { 1, gTextureTitleSherbetLand, 140, 18, 157, 136, 0x0, 0 },
-    { 1, gTextureTitleRoyalRaceway, 140, 18, 157, 160, 0x0, 0 },
-    { 1, gTextureTitleBowsersCastle, 140, 18, 157, 184, 0x0, 0 },
+    { 1, gTextureTitleWarioStadium, 140, 18, (SCREEN_WIDTH/2)-3, SCREEN_HEIGHT-128, 0x0, 0 },
+    { 1, gTextureTitleSherbetLand, 140, 18, (SCREEN_WIDTH/2)-3, SCREEN_HEIGHT-104, 0x0, 0 },
+    { 1, gTextureTitleRoyalRaceway, 140, 18, (SCREEN_WIDTH/2)-3, SCREEN_HEIGHT-80, 0x0, 0 },
+    { 1, gTextureTitleBowsersCastle, 140, 18, (SCREEN_WIDTH/2)-3, SCREEN_HEIGHT-56, 0x0, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -4543,10 +4543,10 @@ MenuTexture seg2_star_cup_title_texture[5] = {
  *
  */
 MenuTexture seg2_special_cup_title_texture[5] = {
-    { 1, gTextureTitleDKsJungleParkway, 140, 18, 157, 112, 0x0, 0 },
-    { 1, gTextureTitleYoshiValley, 140, 18, 157, 136, 0x0, 0 },
-    { 1, gTextureTitleBansheeBoardwalk, 140, 18, 157, 160, 0x0, 0 },
-    { 1, gTextureTitleRainbowRoad, 140, 18, 157, 184, 0x0, 0 },
+    { 1, gTextureTitleDKsJungleParkway, 140, 18, (SCREEN_WIDTH/2)-3, SCREEN_HEIGHT-128, 0x0, 0 },
+    { 1, gTextureTitleYoshiValley, 140, 18, (SCREEN_WIDTH/2)-3, SCREEN_HEIGHT-104, 0x0, 0 },
+    { 1, gTextureTitleBansheeBoardwalk, 140, 18, (SCREEN_WIDTH/2)-3, SCREEN_HEIGHT-80, 0x0, 0 },
+    { 1, gTextureTitleRainbowRoad, 140, 18, (SCREEN_WIDTH/2)-3, SCREEN_HEIGHT-56, 0x0, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -4555,10 +4555,10 @@ MenuTexture seg2_special_cup_title_texture[5] = {
  *
  */
 MenuTexture seg2_battle_title_texture[5] = {
-    { 1, gTextureTitleBigDonut, 140, 18, 157, 112, 0x0, 0 },
-    { 1, gTextureTitleBlockFort, 140, 18, 157, 136, 0x0, 0 },
-    { 1, gTextureTitleDoubleDeck, 140, 18, 157, 160, 0x0, 0 },
-    { 1, gTextureTitleSkyscraper, 140, 18, 157, 184, 0x0, 0 },
+    { 1, gTextureTitleBigDonut, 140, 18, (SCREEN_WIDTH/2)-3, SCREEN_HEIGHT-128, 0x0, 0 },
+    { 1, gTextureTitleBlockFort, 140, 18, (SCREEN_WIDTH/2)-3, SCREEN_HEIGHT-104, 0x0, 0 },
+    { 1, gTextureTitleDoubleDeck, 140, 18, (SCREEN_WIDTH/2)-3, SCREEN_HEIGHT-80, 0x0, 0 },
+    { 1, gTextureTitleSkyscraper, 140, 18, (SCREEN_WIDTH/2)-3, SCREEN_HEIGHT-56, 0x0, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 

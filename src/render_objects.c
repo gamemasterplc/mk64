@@ -2437,7 +2437,7 @@ void func_8004EF9C(s32 arg0) {
 
     temp_v0 = D_800E5548[arg0 * 2];
     temp_t0 = D_800E5548[arg0 * 2 + 1];
-    func_8004D37C(0x00000104, 0x0000003C, D_8018D248[arg0], 0x000000FF, 0x000000FF, 0x000000FF, 0x000000FF, temp_v0,
+    func_8004D37C((SCREEN_WIDTH/2)+100, 0x0000003C, D_8018D248[arg0], 0x000000FF, 0x000000FF, 0x000000FF, 0x000000FF, temp_v0,
                   temp_t0, temp_v0, temp_t0);
 }
 
@@ -2768,6 +2768,9 @@ void func_80050320(void) {
     gSPTexture(gDisplayListHead++, 0x0001, 0x0001, 0, G_TX_RENDERTILE, G_OFF);
 }
 
+#define PROGRESS_BORDER_WIDTH (SCREEN_WIDTH-60)
+#define PROGRESS_BORDER_HEIGHT (SCREEN_HEIGHT-36)
+
 s32 func_80050644(u16 arg0, s32* arg1, s32* arg2) {
     s32 var_v0 = 0;
     s32 thing = 0;
@@ -2776,37 +2779,37 @@ s32 func_80050644(u16 arg0, s32* arg1, s32* arg2) {
     if (test < 3) {
         if (gPlayerCountSelection1 == 1) {
             if (test >= 0) {
-                thing = (s32) (gLapCompletionPercentByPlayerId[arg0] * 928);
+                thing = (s32) (gLapCompletionPercentByPlayerId[arg0] * ((PROGRESS_BORDER_WIDTH*2)+(PROGRESS_BORDER_HEIGHT*2)));
             }
-            if (thing < 0x104) {
+            if (thing < PROGRESS_BORDER_WIDTH) {
                 *arg1 = thing;
                 *arg2 = 0;
                 var_v0 = 1;
-            } else if (thing < 0x1D0) {
-                *arg1 = 0x00000104;
-                *arg2 = thing - 0x104;
+            } else if (thing < (PROGRESS_BORDER_WIDTH+PROGRESS_BORDER_HEIGHT)) {
+                *arg1 = PROGRESS_BORDER_WIDTH;
+                *arg2 = thing - PROGRESS_BORDER_WIDTH;
                 var_v0 = 2;
-            } else if (thing < 0x2D4) {
-                *arg1 = 0x2D4 - thing;
-                *arg2 = 0x000000CC;
+            } else if (thing < ((PROGRESS_BORDER_WIDTH*2)+PROGRESS_BORDER_HEIGHT)) {
+                *arg1 = ((PROGRESS_BORDER_WIDTH*2)+PROGRESS_BORDER_HEIGHT) - thing;
+                *arg2 = PROGRESS_BORDER_HEIGHT;
                 var_v0 = 3;
             } else {
                 *arg1 = 0;
-                *arg2 = 0x3A0 - thing;
+                *arg2 = ((PROGRESS_BORDER_WIDTH*2)+(PROGRESS_BORDER_HEIGHT*2)) - thing;
                 var_v0 = 4;
             }
         } else {
             if (test >= 0) {
-                thing = (s32) (gLapCompletionPercentByPlayerId[arg0] * (SCREEN_WIDTH-60));
+                thing = (s32) (gLapCompletionPercentByPlayerId[arg0] * PROGRESS_BORDER_WIDTH);
             }
             *arg1 = thing;
             *arg2 = 0;
         }
     } else if (gPlayerCountSelection1 == 1) {
-        *arg1 = 0x00000020;
+        *arg1 = 32;
         *arg2 = (gGPCurrentRaceRankByPlayerId[arg0] * 0x14) + 0x20;
     } else {
-        thing = (s32) (gLapCompletionPercentByPlayerId[arg0] * (SCREEN_WIDTH-60));
+        thing = (s32) (gLapCompletionPercentByPlayerId[arg0] * PROGRESS_BORDER_WIDTH);
         *arg1 = thing;
         *arg2 = 0;
     }
@@ -2818,20 +2821,20 @@ void func_800507D8(u16 bombIndex, s32* arg1, s32* arg2) {
     s32 var_v1 = 0;
 
     if (temp_v0 != 0) {
-        var_v1 = (s32) (temp_v0 * 0x3A0) / (s32) gSelectedPathCount;
+        var_v1 = (s32) (temp_v0 * ((PROGRESS_BORDER_WIDTH*2)+(PROGRESS_BORDER_HEIGHT*2))) / (s32) gSelectedPathCount;
     }
-    if (var_v1 < 0x104) {
+    if (var_v1 < PROGRESS_BORDER_WIDTH) {
         *arg1 = var_v1;
         *arg2 = 0;
-    } else if (var_v1 < 0x1D0) {
-        *arg1 = 0x00000104;
-        *arg2 = var_v1 - 0x104;
-    } else if (var_v1 < 0x2D4) {
-        *arg1 = 0x2D4 - var_v1;
-        *arg2 = 0x000000CC;
+    } else if (var_v1 < (PROGRESS_BORDER_WIDTH+PROGRESS_BORDER_HEIGHT)) {
+        *arg1 = PROGRESS_BORDER_WIDTH;
+        *arg2 = var_v1 - PROGRESS_BORDER_WIDTH;
+    } else if (var_v1 < ((PROGRESS_BORDER_WIDTH*2)+PROGRESS_BORDER_HEIGHT)) {
+        *arg1 = ((PROGRESS_BORDER_WIDTH*2)+PROGRESS_BORDER_HEIGHT) - var_v1;
+        *arg2 = PROGRESS_BORDER_HEIGHT;
     } else {
         *arg1 = 0;
-        *arg2 = 0x3A0 - var_v1;
+        *arg2 = ((PROGRESS_BORDER_WIDTH*2)+(PROGRESS_BORDER_HEIGHT*2)) - var_v1;
     }
 }
 
@@ -2869,10 +2872,10 @@ void func_800508C0(void) {
                 var_s2 = 0;
             }
         }
-        func_8004C024(0x0020, 0x0012, 0x0104, var_s0_2, var_s1, var_s2, 0x000000FF);
-        func_8004C148(0x0124, 0x0012, 0x00CC, var_s0_2, var_s1, var_s2, 0x000000FF);
-        func_8004C024(0x0020, 0x00DE, 0x0104, var_s0_2, var_s1, var_s2, 0x000000FF);
-        func_8004C148(0x0020, 0x0012, 0x00CC, var_s0_2, var_s1, var_s2, 0x000000FF);
+        func_8004C024(32, 18, PROGRESS_BORDER_WIDTH, var_s0_2, var_s1, var_s2, 0x000000FF);
+        func_8004C148(32+PROGRESS_BORDER_WIDTH, 18, PROGRESS_BORDER_HEIGHT, var_s0_2, var_s1, var_s2, 0x000000FF);
+        func_8004C024(32, 18+PROGRESS_BORDER_HEIGHT, PROGRESS_BORDER_WIDTH, var_s0_2, var_s1, var_s2, 0x000000FF);
+        func_8004C148(32, 18, PROGRESS_BORDER_HEIGHT, var_s0_2, var_s1, var_s2, 0x000000FF);
     }
     if ((temp_v1 < 0) || (temp_v1 >= 3)) {
         return;
@@ -2898,22 +2901,22 @@ void func_800508C0(void) {
     }
     switch (sp4C) {
         case 1:
-            func_8004C024(0x0020, 0x0012, sp54, var_s0_2, var_s1, var_s2, 0x000000FF);
+            func_8004C024(32, 18, sp54, var_s0_2, var_s1, var_s2, 0x000000FF);
             break;
         case 2:
-            func_8004C024(0x0020, 0x0012, 0x0104, var_s0_2, var_s1, var_s2, 0x000000FF);
-            func_8004C148(0x0124, 0x0012, sp50, var_s0_2, var_s1, var_s2, 0x000000FF);
+            func_8004C024(32, 18, PROGRESS_BORDER_WIDTH, var_s0_2, var_s1, var_s2, 0x000000FF);
+            func_8004C148(32+PROGRESS_BORDER_WIDTH, 18, sp50, var_s0_2, var_s1, var_s2, 0x000000FF);
             break;
         case 3:
-            func_8004C024(0x0020, 0x0012, 0x0104, var_s0_2, var_s1, var_s2, 0x000000FF);
-            func_8004C148(0x0124, 0x0012, 0x00CC, var_s0_2, var_s1, var_s2, 0x000000FF);
-            func_8004C024(sp54 + 0x20, 0x00DE, 0x104 - sp54, var_s0_2, var_s1, var_s2, 0x000000FF);
+            func_8004C024(32, 18, PROGRESS_BORDER_WIDTH, var_s0_2, var_s1, var_s2, 0x000000FF);
+            func_8004C148(32+PROGRESS_BORDER_WIDTH, 18, PROGRESS_BORDER_HEIGHT, var_s0_2, var_s1, var_s2, 0x000000FF);
+            func_8004C024(sp54 + 32, 18+PROGRESS_BORDER_HEIGHT, PROGRESS_BORDER_WIDTH - sp54, var_s0_2, var_s1, var_s2, 0x000000FF);
             break;
         case 4:
-            func_8004C024(0x0020, 0x0012, 0x0104, var_s0_2, var_s1, var_s2, 0x000000FF);
-            func_8004C148(0x0124, 0x0012, 0x00CC, var_s0_2, var_s1, var_s2, 0x000000FF);
-            func_8004C024(0x0020, 0x00DE, 0x0104, var_s0_2, var_s1, var_s2, 0x000000FF);
-            func_8004C148(0x0020, sp50 + 0x12, 0xCC - sp50, var_s0_2, var_s1, var_s2, 0x000000FF);
+            func_8004C024(32, 18, PROGRESS_BORDER_WIDTH, var_s0_2, var_s1, var_s2, 0x000000FF);
+            func_8004C148(32+PROGRESS_BORDER_WIDTH, 18, PROGRESS_BORDER_HEIGHT, var_s0_2, var_s1, var_s2, 0x000000FF);
+            func_8004C024(32, 18+PROGRESS_BORDER_HEIGHT, PROGRESS_BORDER_WIDTH, var_s0_2, var_s1, var_s2, 0x000000FF);
+            func_8004C148(32, sp50 + 18, PROGRESS_BORDER_HEIGHT - sp50, var_s0_2, var_s1, var_s2, 0x000000FF);
             break;
         case 0:
         default:
@@ -2960,7 +2963,7 @@ void func_80050E34(s32 playerId, s32 arg1) {
     if (gPlayerCountSelection1 == 1) {
         spC4 = 0x00000012;
     } else {
-        spC4 = 0x00000078;
+        spC4 = SCREEN_HEIGHT/2;
     }
 
     temp_v0_2 = func_80050644(playerId, &spD0, &spCC);
@@ -4659,7 +4662,7 @@ void func_800573E4(s32 x, s32 y, s8 str) {
 
 void debug_wrap_text(s32* x, s32* y) {
     *x += 8;
-    if (*x >= 296) {
+    if (*x >= (SCREEN_WIDTH-24)) {
         *x = 20;
         *y += 8;
     }
