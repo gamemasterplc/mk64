@@ -215,7 +215,7 @@ void track_minimap_settings(void) {
         case COURSE_BANSHEE_BOARDWALK:
             D_80165880 = (void*) dma_textures(gTextureGhosts, 0x4CC2, 0xD980);
             gMiniMapMarkerScale = 0.016f;
-            gMiniMapFinishLineX[0] = 0x0106;
+            gMiniMapFinishLineX[0] = SCREEN_WIDTH-54;
             gMiniMapX = 55;
             gMiniMapY = 39;
             break;
@@ -1156,32 +1156,32 @@ void init_hud_two_player_horizontal() {
     playerHUD[PLAYER_ONE].unk_4A = 0xA0;
     playerHUD[PLAYER_ONE].unk_4C = 0x3C;
     playerHUD[PLAYER_ONE].rankX = 0x34;
-    playerHUD[PLAYER_ONE].rankY = 0x62;
+    playerHUD[PLAYER_ONE].rankY = ((SCREEN_HEIGHT/2)-22);
     playerHUD[PLAYER_ONE].slideRankX = 0;
     playerHUD[PLAYER_ONE].slideRankY = 0;
-    playerHUD[PLAYER_ONE].timerX = 0xEA;
+    playerHUD[PLAYER_ONE].timerX = (SCREEN_WIDTH-86);
     playerHUD[PLAYER_ONE].timerY = 0x10;
-    playerHUD[PLAYER_ONE].lapX = 0x101;
-    playerHUD[PLAYER_ONE].lapY = 0x6A;
+    playerHUD[PLAYER_ONE].lapX = (SCREEN_WIDTH-63);
+    playerHUD[PLAYER_ONE].lapY = ((SCREEN_HEIGHT/2)-14);
 
     playerHUD[PLAYER_TWO].itemBoxX = -0x53;
-    playerHUD[PLAYER_TWO].itemBoxY = 0x8F;
+    playerHUD[PLAYER_TWO].itemBoxY = (SCREEN_HEIGHT/2)+23;
     playerHUD[PLAYER_TWO].slideItemBoxX = 0;
     playerHUD[PLAYER_TWO].slideItemBoxY = 0;
     playerHUD[PLAYER_TWO].unk_4A = 0xA0;
     playerHUD[PLAYER_TWO].unk_4C = 0xB4;
     playerHUD[PLAYER_TWO].rankX = 0x34;
-    playerHUD[PLAYER_TWO].rankY = 0xD2;
+    playerHUD[PLAYER_TWO].rankY = SCREEN_HEIGHT-30;
     playerHUD[PLAYER_TWO].slideRankX = 0;
     playerHUD[PLAYER_TWO].slideRankY = 0;
-    playerHUD[PLAYER_TWO].timerX = 0xEA;
+    playerHUD[PLAYER_TWO].timerX = (SCREEN_WIDTH-86);
     playerHUD[PLAYER_TWO].timerY = 0x7F;
-    playerHUD[PLAYER_TWO].lapX = 0x101;
-    playerHUD[PLAYER_TWO].lapY = 0xDA;
+    playerHUD[PLAYER_TWO].lapX = (SCREEN_WIDTH-63);
+    playerHUD[PLAYER_TWO].lapY = SCREEN_HEIGHT-22;
 
     if (gModeSelection == BATTLE) {
-        playerHUD[PLAYER_ONE].itemBoxY = 0x5E;
-        playerHUD[PLAYER_TWO].itemBoxY = 0xD0;
+        playerHUD[PLAYER_ONE].itemBoxY = ((SCREEN_HEIGHT/2)-26);
+        playerHUD[PLAYER_TWO].itemBoxY = SCREEN_HEIGHT-32;
     }
 
     playerHUD[PLAYER_ONE].rankScaling = playerHUD[PLAYER_TWO].rankScaling = 0.5f;
@@ -1232,26 +1232,26 @@ void init_hud_three_four_player(void) {
     playerHUD[PLAYER_ONE].unk_4A = 0x50;
     playerHUD[PLAYER_ONE].unk_4C = 0x3C;
     playerHUD[PLAYER_ONE].rankX = 0x25;
-    playerHUD[PLAYER_ONE].rankY = 0x64;
+    playerHUD[PLAYER_ONE].rankY = (SCREEN_HEIGHT/2)-20;
     playerHUD[PLAYER_ONE].slideRankX = 0;
     playerHUD[PLAYER_ONE].slideRankY = 0;
-    playerHUD[PLAYER_ONE].lapX = 0x8C;
-    playerHUD[PLAYER_ONE].lapY = 0x60;
+    playerHUD[PLAYER_ONE].lapX = ((SCREEN_WIDTH/2)-20);
+    playerHUD[PLAYER_ONE].lapY = ((SCREEN_HEIGHT/2)-24);
     playerHUD[PLAYER_ONE].unk_6C = 0xDE;
     playerHUD[PLAYER_ONE].unk_6E = 0xC8;
 
-    playerHUD[PLAYER_TWO].itemBoxX = 0x175;
+    playerHUD[PLAYER_TWO].itemBoxX = SCREEN_WIDTH+53;
     playerHUD[PLAYER_TWO].itemBoxY = 0x36;
     playerHUD[PLAYER_TWO].slideItemBoxX = 0;
     playerHUD[PLAYER_TWO].slideItemBoxY = 0;
     playerHUD[PLAYER_TWO].unk_4A = 0xF0;
     playerHUD[PLAYER_TWO].unk_4C = 0x3C;
-    playerHUD[PLAYER_TWO].rankX = 0x11A;
-    playerHUD[PLAYER_TWO].rankY = 0x64;
+    playerHUD[PLAYER_TWO].rankX = (SCREEN_WIDTH-38);
+    playerHUD[PLAYER_TWO].rankY = (SCREEN_HEIGHT/2)-20;
     playerHUD[PLAYER_TWO].slideRankX = 0;
     playerHUD[PLAYER_TWO].slideRankY = 0;
-    playerHUD[PLAYER_TWO].lapX = 0xB4;
-    playerHUD[PLAYER_TWO].lapY = 0x60;
+    playerHUD[PLAYER_TWO].lapX = ((SCREEN_WIDTH/2)+20);
+    playerHUD[PLAYER_TWO].lapY = ((SCREEN_HEIGHT/2)-24);
     playerHUD[PLAYER_TWO].unk_6C = 0xC8;
     playerHUD[PLAYER_TWO].unk_6E = 0xC8;
 
@@ -1262,26 +1262,26 @@ void init_hud_three_four_player(void) {
     playerHUD[PLAYER_THREE].unk_4A = 0x50;
     playerHUD[PLAYER_THREE].unk_4C = 0xB4;
     playerHUD[PLAYER_THREE].rankX = 0x25;
-    playerHUD[PLAYER_THREE].rankY = 0xD2;
+    playerHUD[PLAYER_THREE].rankY = (SCREEN_HEIGHT-30);
     playerHUD[PLAYER_THREE].slideRankX = 0;
     playerHUD[PLAYER_THREE].slideRankY = 0;
-    playerHUD[PLAYER_THREE].lapX = 0x8C;
-    playerHUD[PLAYER_THREE].lapY = 0xD4;
+    playerHUD[PLAYER_THREE].lapX = ((SCREEN_WIDTH/2)-20);
+    playerHUD[PLAYER_THREE].lapY = (SCREEN_HEIGHT-28);
     playerHUD[PLAYER_THREE].unk_6C = 0xDE;
     playerHUD[PLAYER_THREE].unk_6E = 0xC0;
 
-    playerHUD[PLAYER_FOUR].itemBoxX = 0x175;
+    playerHUD[PLAYER_FOUR].itemBoxX = SCREEN_WIDTH+53;
     playerHUD[PLAYER_FOUR].itemBoxY = 0x2D;
     playerHUD[PLAYER_FOUR].slideItemBoxX = 0;
     playerHUD[PLAYER_FOUR].slideItemBoxY = 0;
     playerHUD[PLAYER_FOUR].unk_4A = 0xF0;
     playerHUD[PLAYER_FOUR].unk_4C = 0xB4;
-    playerHUD[PLAYER_FOUR].rankX = 0x11A;
-    playerHUD[PLAYER_FOUR].rankY = 0xD2;
+    playerHUD[PLAYER_FOUR].rankX = (SCREEN_WIDTH-38);
+    playerHUD[PLAYER_FOUR].rankY = (SCREEN_HEIGHT-30);
     playerHUD[PLAYER_FOUR].slideRankX = 0;
     playerHUD[PLAYER_FOUR].slideRankY = 0;
-    playerHUD[PLAYER_FOUR].lapX = 0xB4;
-    playerHUD[PLAYER_FOUR].lapY = 0xD4;
+    playerHUD[PLAYER_FOUR].lapX = ((SCREEN_WIDTH/2)+20);
+    playerHUD[PLAYER_FOUR].lapY = (SCREEN_HEIGHT-28);
     playerHUD[PLAYER_FOUR].unk_6C = 0xC8;
     playerHUD[PLAYER_FOUR].unk_6E = 0xC0;
 

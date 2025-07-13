@@ -5,6 +5,7 @@
  * look like link to menu_item
  */
 #include "textures.h"
+#include "mk64.h"
 
 /**
  * @brief MenuTexture of a tiny font texture of number 0
@@ -4169,7 +4170,7 @@ MenuTexture seg2_sunset_background_texture[2] = {
  *
  */
 MenuTexture seg2_copyright_1996_texture[2] = {
-    { 1, gTextureCopyright1996, 124, 17, 98, 199, 0x0, 0 },
+    { 1, gTextureCopyright1996, 124, 17, ((SCREEN_WIDTH/2)-62), SCREEN_HEIGHT-41, 0x0, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -4178,7 +4179,7 @@ MenuTexture seg2_copyright_1996_texture[2] = {
  *
  */
 MenuTexture seg2_push_start_button_texture[2] = {
-    { 1, gTexturePushStartButton, 159, 16, 81, 179, 0x0, 0 },
+    { 1, gTexturePushStartButton, 159, 16, ((SCREEN_WIDTH/2)-79), SCREEN_HEIGHT-61, 0x0, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -4187,7 +4188,7 @@ MenuTexture seg2_push_start_button_texture[2] = {
  *
  */
 MenuTexture D_02004638[2] = {
-    { 0, gTextureOption, 130, 32, 95, 16, 0x0, 0 },
+    { 0, gTextureOption, 130, 32, (SCREEN_WIDTH/2)-65, 16, 0x0, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -4443,7 +4444,7 @@ MenuTexture D_02004B4C[2] = {
  *
  */
 MenuTexture D_02004B74[2] = {
-    { 1, gTextureMenuOK, 31, 19, 264, 202, 0x0, 0 },
+    { 1, gTextureMenuOK, 31, 19, SCREEN_WIDTH-56, SCREEN_HEIGHT-38, 0x0, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 
@@ -4566,7 +4567,7 @@ MenuTexture seg2_battle_title_texture[5] = {
  *
  */
 MenuTexture D_02004E80[2] = {
-    { 1, gTextureMenuOK, 31, 19, 265, 208, 0x0, 0 },
+    { 1, gTextureMenuOK, 31, 19, SCREEN_WIDTH-55, SCREEN_HEIGHT-32, 0x0, 0 },
     { 0, NULL, 0, 0, 0, 0, 0, 0 },
 };
 

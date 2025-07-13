@@ -2797,7 +2797,7 @@ s32 func_80050644(u16 arg0, s32* arg1, s32* arg2) {
             }
         } else {
             if (test >= 0) {
-                thing = (s32) (gLapCompletionPercentByPlayerId[arg0] * 260);
+                thing = (s32) (gLapCompletionPercentByPlayerId[arg0] * (SCREEN_WIDTH-60));
             }
             *arg1 = thing;
             *arg2 = 0;
@@ -2806,7 +2806,7 @@ s32 func_80050644(u16 arg0, s32* arg1, s32* arg2) {
         *arg1 = 0x00000020;
         *arg2 = (gGPCurrentRaceRankByPlayerId[arg0] * 0x14) + 0x20;
     } else {
-        thing = (s32) (gLapCompletionPercentByPlayerId[arg0] * 260);
+        thing = (s32) (gLapCompletionPercentByPlayerId[arg0] * (SCREEN_WIDTH-60));
         *arg1 = thing;
         *arg2 = 0;
     }
