@@ -419,6 +419,7 @@ SECTIONS
    BEGIN_NOLOAD(buffers)
    {
       BUILD_DIR/src/buffers/trig_tables_bss.o(.bss*);
+      . = ALIGN(0x40);
       BUILD_DIR/src/buffers/buffers.o(.bss*);
       BUILD_DIR/src/buffers/gfx_output_buffer.o(.bss*);
       BUILD_DIR/src/audio/synthesis.o(.bss*);

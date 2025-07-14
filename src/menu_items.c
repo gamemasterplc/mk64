@@ -5867,8 +5867,8 @@ void render_menus(MenuItem* arg0) {
             case MAIN_MENU_BACKGROUND:
             case CHARACTER_SELECT_BACKGROUND:
             case COURSE_SELECT_BACKGROUND:
-                gDisplayListHead = func_8009BC9C(gDisplayListHead, gMenuTexturesBackground[has_unlocked_extra_mode()],
-                                                 arg0->column, arg0->row, 3, 0);
+                gDisplayListHead = render_menu_textures(
+                    gDisplayListHead, gMenuTexturesBackground[has_unlocked_extra_mode()], arg0->column, arg0->row);
                 break;
             case MENU_ITEM_UI_GAME_SELECT:
                 gDisplayListHead =

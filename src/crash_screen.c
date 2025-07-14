@@ -44,7 +44,7 @@ void crash_screen_draw_glyph(u16* framebuffer, s32 x, s32 y, s32 glyph) {
 
         for (j = 5; j >= 0; j--) {
 
-            ptr = (y + i) * 320 + (x + j);
+            ptr = (y + i) * SCREEN_WIDTH + (x + j);
 
             if (data & 1) {
                 framebuffer[ptr] = 0xffff;
@@ -81,7 +81,7 @@ void crash_screen_draw_square(u16* framebuffer) {
     for (h = 0; h < 2; h++) {
         for (i = (h * BORDER_WIDTH) + SQUARE_Y; i < (SQUARE_Y2 - (h * BORDER_WIDTH)); i++) {
             for (j = (h * BORDER_WIDTH) + SQUARE_X; j < (SQUARE_X2 - (h * BORDER_WIDTH)); j++) {
-                framebuffer[(i * 320) + j] = (h == 0) ? (RED_COLOUR) : (WHITE_COLOUR);
+                framebuffer[(i * SCREEN_WIDTH) + j] = (h == 0) ? (RED_COLOUR) : (WHITE_COLOUR);
             }
         }
     }
@@ -122,7 +122,7 @@ void crash_screen_draw_info(u16* framebuffer, OSThread* thread) {
         for (i = 0; i < 16; i++) {
             for (j = 0; j < 120; j++) {
                 // Set pixels to black
-                framebuffer[((i + math) * 320) + (j + 100)] = BLACK_COLOUR;
+                framebuffer[((i + math) * SCREEN_WIDTH) + (j + 100)] = BLACK_COLOUR;
             }
         }
     }

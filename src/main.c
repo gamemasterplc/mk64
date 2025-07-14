@@ -1089,7 +1089,7 @@ void thread3_video(UNUSED void* arg0) {
 
     // Clear framebuffer.
     framebuffer1 = (u64*) &gFramebuffer1;
-    for (i = 0; i < 19200; i++) {
+    for (i = 0; i < (SCREEN_WIDTH/4)*SCREEN_HEIGHT; i++) {
         framebuffer1[i] = 0;
     }
     setup_mesg_queues();
