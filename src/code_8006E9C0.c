@@ -301,7 +301,7 @@ void track_minimap_settings(void) {
             break;
         case COURSE_WARIO_STADIUM:
             gMiniMapMarkerScale = 0.0155f;
-            gMiniMapFinishLineX[0] = 0x0106;
+            gMiniMapFinishLineX[0] = SCREEN_WIDTH-58;
             gMiniMapX = 53;
             gMiniMapY = 35;
             break;

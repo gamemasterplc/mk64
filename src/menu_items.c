@@ -6479,12 +6479,12 @@ void func_800A10CC(MenuItem* arg0) {
         case 4:
         case 5:
             gDisplayListHead =
-                draw_box_fill(gDisplayListHead, 0x0000001E, 0x00000032, 0x00000122, 0x0000006E, 0, 0, 0, 0x000000FF);
+                draw_box_fill(gDisplayListHead, (SCREEN_WIDTH/2)-130, 50, (SCREEN_WIDTH/2)+130, 110, 0, 0, 0, 0x000000FF);
             index = arg0->state - 2;
             set_text_color(TEXT_YELLOW);
             for (var_s1 = 0; var_s1 < 4; var_s1++) {
                 // In a perfect world this would be `D_800E7940[index][var_s1]`
-                print_text_mode_1(0x00000023, 0x41 + (0xD * var_s1), D_800E7940[(index * 4) + var_s1], 0, 0.65f, 0.65f);
+                print_text_mode_1((SCREEN_WIDTH/2)-125, 0x41 + (0xD * var_s1), D_800E7940[(index * 4) + var_s1], 0, 0.65f, 0.65f);
             }
             break;
         default:
